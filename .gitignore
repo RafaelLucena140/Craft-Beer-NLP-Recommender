@@ -1,0 +1,44 @@
+# =========================
+# Ambientes Virtuais e IDEs
+# =========================
+venv/
+.env/
+env/
+.vscode/
+.idea/
+
+# =========================
+# Python e Jupyter
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+
+# =========================
+# Dados e Modelos (Crucial)
+# =========================
+# Ignora qualquer arquivo dentro da pasta data/ (onde salvaremos os CSVs)
+data/
+*.csv
+*.json
+*.parquet
+*.xlsx
+
+# Ignora os modelos treinados (que serão gerados na Fase 3)
+*.pkl
+*.h5
+*.joblib
+*.pt
+
+# =========================
+# Credenciais e Logs
+# =========================
+.env
+*.log
+
+# =========================
+# Sistema Operacional
+# =========================
+.DS_Store
+Thumbs.db
