@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  chromadb:
+    image: chromadb/chroma:latest
+    container_name: vector_database
+    ports:
+      - "8000:8000"
+    volumes:
+      # Os vetores gerados ficarão salvos no seu Disco D de forma persistente
+      - ./data/chromadb_data:/chroma/chroma
+    environment:
+      - IS_PERSISTENT=TRUE
+      - ANONYMIZED_TELEMETRY=False
+    restart: always
