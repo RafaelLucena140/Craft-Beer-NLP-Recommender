@@ -10,6 +10,7 @@ from pathlib import Path
 
 import chromadb
 from chromadb.utils import embedding_functions
+
 from recommender import rerank_candidates
 from settings import settings
 

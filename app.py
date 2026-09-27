@@ -4,7 +4,12 @@ import logging
 
 import streamlit as st
 
-from recommender import available_styles, connect_collection, generate_answer, retrieve_beers
+from recommender import (
+    available_styles,
+    connect_collection,
+    generate_answer,
+    retrieve_beers,
+)
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

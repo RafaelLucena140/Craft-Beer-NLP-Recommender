@@ -3,6 +3,7 @@
 from pathlib import Path
 
 import pandas as pd
+
 from settings import settings
 
 INPUT_PATH = settings.raw_data_path

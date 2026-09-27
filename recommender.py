@@ -47,9 +47,10 @@ def _style_constraints(query: str, styles: list[str]) -> list[str]:
         "wheat": lambda style: "wheat" in _normalize(style) or "hefeweizen" in _normalize(style),
     }
     for phrase, predicate in aliases.items():
-        if re.search(rf"\b{re.escape(phrase)}\b", normalized_query):
-            if not any(phrase in _normalize(style) for style in matches):
-                matches.update(style for style in styles if predicate(style))
+        if re.search(rf"\b{re.escape(phrase)}\b", normalized_query) and not any(
+            phrase in _normalize(style) for style in matches
+        ):
+            matches.update(style for style in styles if predicate(style))
     return sorted(matches)
 
 

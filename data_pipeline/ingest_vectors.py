@@ -8,6 +8,7 @@ from pathlib import Path
 import chromadb
 import pandas as pd
 from chromadb.utils import embedding_functions
+
 from settings import settings
 
 DATA_PATH = settings.prepared_data_path
@@ -102,7 +103,7 @@ def ingest_data(data_path: Path = DATA_PATH) -> int:
 
         try:
             current = client.get_collection(name=COLLECTION_NAME)
-        except Exception:
+        except chromadb.errors.NotFoundError:
             current = None
         if current is not None:
             current.modify(name=backup_name)
@@ -116,12 +117,13 @@ def ingest_data(data_path: Path = DATA_PATH) -> int:
         # Retain the previous index if validation or the collection swap fails.
         try:
             client.delete_collection(name=staging_name)
-        except Exception:
+        except chromadb.errors.NotFoundError:
+            # The staging collection may already be gone if creation failed early.
             pass
         if old_renamed:
             try:
                 client.get_collection(name=COLLECTION_NAME)
-            except Exception:
+            except chromadb.errors.NotFoundError:
                 client.get_collection(name=backup_name).modify(name=COLLECTION_NAME)
         raise
 
