@@ -3,7 +3,6 @@
 import argparse
 import json
 import math
-import os
 import re
 import unicodedata
 from datetime import datetime, timezone
@@ -11,6 +10,8 @@ from pathlib import Path
 
 import chromadb
 from chromadb.utils import embedding_functions
+from recommender import rerank_candidates
+from settings import settings
 
 CASES_PATH = Path("evaluation/retrieval_cases.json")
 OUTPUT_PATH = Path("evaluation/retrieval_report.json")
@@ -60,19 +61,26 @@ def evaluate(cases_path: Path = CASES_PATH, output_path: Path = OUTPUT_PATH, k: 
         if not case.get("id") or not case.get("query"):
             raise ValueError("Cada caso precisa de 'id' e 'query'.")
 
-    client = chromadb.HttpClient(host=os.getenv("CHROMA_HOST", "localhost"), port=int(os.getenv("CHROMA_PORT", "8000")))
+    client = chromadb.HttpClient(host=settings.chroma_host, port=settings.chroma_port)
     embedder = embedding_functions.SentenceTransformerEmbeddingFunction(
-        model_name=os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2")
+        model_name=settings.embedding_model
     )
-    collection = client.get_collection(name=os.getenv("CHROMA_COLLECTION", "craft_beers"), embedding_function=embedder)
+    collection = client.get_collection(name=settings.collection_name, embedding_function=embedder)
     if collection.count() == 0:
         raise ValueError("A coleção está vazia. Execute a ingestão antes da avaliação.")
     catalog = collection.get(include=["metadatas"])["metadatas"]
 
     scored = []
     for case in cases:
-        result = collection.query(query_texts=[case["query"]], n_results=min(k, collection.count()), include=["metadatas"])
-        metadata = result["metadatas"][0]
+        result = collection.query(
+            query_texts=[case["query"]],
+            n_results=min(max(k, settings.retrieval_candidates), collection.count()),
+            include=["documents", "metadatas", "distances"],
+        )
+        ranked = rerank_candidates(
+            result["documents"][0], result["metadatas"][0], result["distances"][0], k
+        )
+        metadata = [item["metadata"] for item in ranked]
         relevant_catalog_count = sum(is_relevant(item, case) for item in catalog)
         scored.append(score_case(case, metadata, relevant_catalog_count, k))
     metric_names = ["precision_at_k", "recall_at_k", "hit_rate_at_k", "reciprocal_rank", "ndcg_at_k"]

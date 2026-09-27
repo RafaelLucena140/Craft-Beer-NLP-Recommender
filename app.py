@@ -1,102 +1,81 @@
+"""Streamlit user interface for the local beer recommender."""
+
+import logging
+
 import streamlit as st
-import chromadb
-from chromadb.utils import embedding_functions
-from langchain_community.llms import Ollama
-import warnings
 
-warnings.filterwarnings("ignore")
+from recommender import available_styles, connect_collection, generate_answer, retrieve_beers
 
-# Configuração da página do Streamlit
-st.set_page_config(
-    page_title="Sommelier de Cervejas IA",
-    page_icon="🍺",
-    layout="centered"
-)
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
-# Inicialização das conexões (usando cache para não reconectar a cada clique)
+st.set_page_config(page_title="Sommelier de Cervejas IA", page_icon="🍺", layout="centered")
+
+
 @st.cache_resource
-def iniciar_conexoes():
-    # Conecta ao ChromaDB no Docker
-    client = chromadb.HttpClient(host='localhost', port=8000)
-    sentence_transformer_ef = embedding_functions.SentenceTransformerEmbeddingFunction(model_name="all-MiniLM-L6-v2")
-    collection = client.get_collection(name="craft_beers", embedding_function=sentence_transformer_ef)
-    return collection
+def load_recommender():
+    collection = connect_collection()
+    return collection, available_styles(collection)
+
 
 try:
-    collection = iniciar_conexoes()
-    conexao_ok = True
-except Exception as e:
-    conexao_ok = False
+    collection, styles = load_recommender()
+    connection_error = None
+except Exception as exc:
+    logger.exception("Não foi possível inicializar a busca vetorial")
+    collection, styles = None, []
+    connection_error = exc
 
-# Interface Visual
 st.title("🍺 Sommelier de Cervejas IA")
-st.markdown("Bem-vindo ao seu especialista em cervejas artesanais. Pergunte sobre estilos, aromas ou peça uma recomendação sob medida!")
+st.markdown("Peça recomendações por estilo, sabor, teor alcoólico ou notas da comunidade.")
 
-# Barra Lateral de Configurações
-st.sidebar.header("⚙️ Configurações da IA")
-temperatura = st.sidebar.slider("Temperatura do Modelo", min_value=0.1, max_value=1.0, value=0.3, step=0.1)
-st.sidebar.markdown("""
-*💡 **Dica de MLOps:** Temperaturas baixas (0.1 - 0.3) deixam o sommelier focado e preciso. Temperaturas altas liberam a criatividade do modelo.*
-""")
+st.sidebar.header("Configurações")
+temperature = st.sidebar.slider("Criatividade da resposta", min_value=0.1, max_value=1.0, value=0.3, step=0.1)
+st.sidebar.caption("A busca e os filtros são aplicados antes da geração da resposta.")
 
-# Inicializa o histórico de chat na sessão do Streamlit
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# Exibe as mensagens anteriores do histórico
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-# Campo de entrada do Chat
-if pergunta := st.chat_input("O que você está a fim de beber hoje?"):
-    
-    # Exibe a pergunta do usuário
+if question := st.chat_input("O que você gostaria de beber?"):
+    st.session_state.messages.append({"role": "user", "content": question})
     with st.chat_message("user"):
-        st.markdown(pergunta)
-    st.session_state.messages.append({"role": "user", "content": pergunta})
+        st.markdown(question)
 
-    if not conexao_ok:
-        with st.chat_message("assistant"):
-            st.error("❌ Erro de conexão: Garanta que o contêiner do ChromaDB no Docker está rodando.")
-    else:
-        # Fluxo RAG
-        with st.spinner("🔍 Consultando o cérebro vetorial..."):
-            resultados = collection.query(query_texts=[pergunta], n_results=3)
-            contexto_recuperado = "\n".join(resultados['documents'][0])
-
-            # TÉCNICA DE MLOPS: Sanitização forçada do texto antes de ir para o LLM
-            contexto_recuperado = contexto_recuperado.replace("nan%", "Desconhecido")
-            
-        with st.spinner("🧠 Elaborando recomendação com Llama 3.2..."):
-            # Configura o LLM com a temperatura escolhida no slider
-            llm = Ollama(model="llama3.2", base_url="http://127.0.0.1:11434", temperature=temperatura)
-            
-            prompt = f"""Você é um sommelier de cervejas artesanais especialista e direto ao ponto.
-Com base EXCLUSIVAMENTE no contexto abaixo, recomende as cervejas que melhor atendem ao pedido do usuário.
-
-REGRAS DE LÓGICA E FORMATAÇÃO:
-1. NÃO repita parágrafos ou estruturas de frases.
-2. Use bullet points para listar as cervejas.
-3. REGRA DE DADOS: Se o ABV de uma cerveja constar como 0.0, 0% ou nan%, isso significa que o teor alcoólico é DESCONHECIDO. NUNCA exiba a palavra 'nan'. Apenas informe textualmente que o ABV não está especificado.
-4. Responda em português do Brasil de forma fluida.
-
-CONTEXTO (Opções disponíveis no banco):
-{contexto_recuperado}
-
-PERGUNTA DO USUÁRIO:
-{pergunta}
-
-SUA RECOMENDAÇÃO:"""
-
-            resposta = llm.invoke(prompt)
-
-        # Exibe a resposta do Sommelier
-        with st.chat_message("assistant"):
-            st.markdown(resposta)
-            
-            # Expander opcional para auditoria de dados (estilo linhagem de dados)
-            with st.expander("🛠️ Ver metadados recuperados (RAG Context)"):
-                st.code(contexto_recuperado, language="text")
-                
-        st.session_state.messages.append({"role": "assistant", "content": resposta})
+    with st.chat_message("assistant"):
+        if connection_error:
+            st.error("Não consegui acessar o catálogo vetorial. Confira o container ChromaDB e tente novamente.")
+        else:
+            try:
+                with st.spinner("Buscando e ordenando cervejas compatíveis..."):
+                    result = retrieve_beers(collection, question, styles)
+                if not result["items"]:
+                    answer = "Não encontrei cervejas que atendam aos filtros desta consulta no catálogo atual."
+                    st.info(answer)
+                else:
+                    with st.spinner("Preparando a recomendação..."):
+                        answer = generate_answer(question, result["items"], temperature)
+                    st.markdown(answer)
+                with st.expander("Ver filtros e dados recuperados"):
+                    st.write("Filtros aplicados:", result["filters"] or "Busca sem filtros estruturados")
+                    for item in result["items"]:
+                        metadata = item["metadata"]
+                        st.markdown(
+                            f"**{metadata.get('beer_name', 'Cerveja')}** — {metadata.get('beer_style', 'Estilo desconhecido')}"
+                        )
+                        st.caption(
+                            f"ABV: {metadata['abv']:.1f}%" if metadata.get("abv_known") else "ABV não especificado"
+                        )
+                        st.caption(
+                            f"Nota geral média: {metadata.get('review_overall', 0):.2f}/5 · "
+                            f"Avaliações: {metadata.get('review_count', 'n/d')} · "
+                            f"Dispersão da nota: {metadata.get('review_overall_std', 0):.2f}"
+                        )
+                        st.code(item["document"], language="text")
+                st.session_state.messages.append({"role": "assistant", "content": answer})
+            except Exception:
+                logger.exception("Falha ao processar recomendação")
+                st.error("Ocorreu um erro ao buscar ou gerar a recomendação. Confira os serviços locais e tente novamente.")

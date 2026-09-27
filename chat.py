@@ -1,71 +1,42 @@
-import chromadb
-from chromadb.utils import embedding_functions
-from langchain_community.llms import Ollama
-import warnings
+"""Command-line chat using the same retrieval path as the Streamlit app."""
 
-# Ignora os avisos de depreciação do LangChain para manter o terminal limpo
-warnings.filterwarnings("ignore")
+import logging
+
+from recommender import available_styles, connect_collection, generate_answer, retrieve_beers
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 
 def iniciar_chat():
-    print("🔌 Conectando ao Banco Vetorial...")
-    client = chromadb.HttpClient(host='localhost', port=8000)
-    
-    # Usa o mesmo modelo de embedding da ingestão para que a matemática bata
-    sentence_transformer_ef = embedding_functions.SentenceTransformerEmbeddingFunction(model_name="all-MiniLM-L6-v2")
-    collection = client.get_collection(name="craft_beers", embedding_function=sentence_transformer_ef)
+    try:
+        collection = connect_collection()
+        styles = available_styles(collection)
+    except Exception:
+        logger.exception("Não foi possível conectar ao ChromaDB")
+        print("Não foi possível conectar ao catálogo. Confira o ChromaDB e as configurações.")
+        return
 
-    print("🧠 Conectando ao Llama 3.2 via Ollama...")
-    # Configura o LLM local
-    llm = Ollama(model="llama3.2", temperature=0.3)
-
-    print("\n" + "="*50)
-    print("🍺 Sommelier de Inteligência Artificial Online!")
-    print("Digite 'sair' a qualquer momento para encerrar.")
-    print("="*50 + "\n")
-
+    print("Sommelier local pronto. Digite 'sair' para encerrar.")
     while True:
-        pergunta = input("\nVocê: ")
-        
-        if pergunta.lower() == 'sair':
-            print("Encerrando o chat. Saúde! 🍻")
+        question = input("\nVocê: ").strip()
+        if question.casefold() == "sair":
+            print("Até a próxima. Saúde!")
             break
+        if not question:
+            continue
+        try:
+            result = retrieve_beers(collection, question, styles)
+            if not result["items"]:
+                print("Não encontrei cervejas que atendam aos filtros desta consulta no catálogo atual.")
+                continue
+            print("Filtros: " + (", ".join(result["filters"]) if result["filters"] else "nenhum filtro estruturado"))
+            answer = generate_answer(question, result["items"])
+            print("\nSommelier IA:\n" + answer)
+        except Exception:
+            logger.exception("Falha ao processar consulta")
+            print("Ocorreu um erro ao buscar ou gerar a recomendação. Confira os serviços locais e tente novamente.")
 
-        print("\n🔍 Buscando as melhores cervejas no banco de dados...")
-        
-        # 1. RETRIEVAL (A Busca): Transforma a pergunta em vetor e acha as 3 cervejas mais próximas
-        resultados = collection.query(
-            query_texts=[pergunta],
-            n_results=3
-        )
-
-        # Junta os textos sintéticos das 3 cervejas em um único bloco de texto
-        contexto_recuperado = "\n".join(resultados['documents'][0])
-
-        # 2. AUGMENTED GENERATION (A Geração de Texto): Monta o Prompt para o LLM
-        prompt = f"""Você é um sommelier de cervejas artesanais especialista e direto ao ponto.
-Com base EXCLUSIVAMENTE no contexto abaixo, recomende as cervejas que melhor atendem ao pedido do usuário.
-
-REGRAS DE LÓGICA E FORMATAÇÃO:
-1. NÃO repita parágrafos ou estruturas de frases.
-2. Use bullet points para listar as cervejas.
-3. REGRA DE DADOS: Se o ABV de uma cerveja for 0.0 ou 0%, isso significa que o teor alcoólico é DESCONHECIDO no sistema. Nunca diga que ela não tem álcool ou tente adivinhar a força. Apenas informe que o ABV não está especificado.
-4. Responda em português do Brasil de forma fluida.
-
-CONTEXTO (Opções disponíveis no banco):
-{contexto_recuperado}
-
-PERGUNTA DO USUÁRIO:
-{pergunta}
-
-SUA RECOMENDAÇÃO:"""
-
-        print("🤖 O Llama 3.2 está elaborando a resposta (isso usa a sua placa de vídeo)...")
-        
-        # Chama o LLM para gerar a resposta final com base no prompt
-        resposta = llm.invoke(prompt)
-        
-        print("\n🍺 Sommelier IA:\n")
-        print(resposta)
 
 if __name__ == "__main__":
     iniciar_chat()

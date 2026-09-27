@@ -2,26 +2,27 @@
 
 import hashlib
 import math
-import os
 import uuid
 from pathlib import Path
 
 import chromadb
 import pandas as pd
 from chromadb.utils import embedding_functions
+from settings import settings
 
-DATA_PATH = Path(os.getenv("BEER_DATA_PATH", "data/raw/beers_cleaned.csv"))
-CHROMA_HOST = os.getenv("CHROMA_HOST", "localhost")
-CHROMA_PORT = int(os.getenv("CHROMA_PORT", "8000"))
-COLLECTION_NAME = os.getenv("CHROMA_COLLECTION", "craft_beers")
-EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2")
-BATCH_SIZE = 256
+DATA_PATH = settings.prepared_data_path
+CHROMA_HOST = settings.chroma_host
+CHROMA_PORT = settings.chroma_port
+COLLECTION_NAME = settings.collection_name
+EMBEDDING_MODEL = settings.embedding_model
+BATCH_SIZE = settings.ingestion_batch_size
 REQUIRED_COLUMNS = {"beer_name", "beer_style", "beer_abv", "review_overall", "review_aroma", "review_appearance", "review_palate", "review_taste"}
 SCORE_COLUMNS = ["review_overall", "review_aroma", "review_appearance", "review_palate", "review_taste"]
 
 
 def _stable_id(row: pd.Series) -> str:
-    identity = "|".join(str(row.get(column, "")) for column in ("brewery_name", "beer_name", "beer_style"))
+    identity_columns = ("beer_beerid",) if pd.notna(row.get("beer_beerid")) else ("brewery_name", "beer_name", "beer_style")
+    identity = "|".join(str(row.get(column, "")) for column in identity_columns)
     return hashlib.sha256(identity.casefold().encode("utf-8")).hexdigest()
 
 
@@ -33,14 +34,20 @@ def _record(row: pd.Series):
     abv_known = pd.notna(row["beer_abv"]) and math.isfinite(float(row["beer_abv"]))
     abv = float(row["beer_abv"]) if abv_known else 0.0
     score_values = {col: _number(row[col]) for col in SCORE_COLUMNS}
+    score_known = {col: pd.notna(row[col]) for col in SCORE_COLUMNS}
+    review_count = max(1, int(_number(row.get("review_count", 1))))
+    rating_std = _number(row.get("review_overall_std", 0.0))
     brewery = row.get("brewery_name")
     brewery = str(brewery).strip() if pd.notna(brewery) else "Desconhecida"
     name, style = str(row["beer_name"]).strip(), str(row["beer_style"]).strip()
     document = (
         f"Beer: {name}. Brewery: {brewery}. Style: {style}. "
         f"ABV: {abv if abv_known else 'unknown'}. "
-        + ", ".join(f"{col.removeprefix('review_').title()}: {value:g}" for col, value in score_values.items())
-        + "."
+        + ", ".join(
+            f"{col.removeprefix('review_').title()}: {value:g}" if score_known[col] else f"{col.removeprefix('review_').title()}: unknown"
+            for col, value in score_values.items()
+        )
+        + f". Based on {review_count} reviews. Overall rating standard deviation: {rating_std:g}."
     )
     metadata = {
         "beer_name": name,
@@ -48,7 +55,10 @@ def _record(row: pd.Series):
         "brewery_name": brewery,
         "abv": abv,
         "abv_known": bool(abv_known),
+        "review_count": review_count,
+        "review_overall_std": rating_std,
         **score_values,
+        **{f"{col}_known": bool(known) for col, known in score_known.items()},
     }
     return _stable_id(row), document, metadata
 
@@ -65,7 +75,7 @@ def ingest_data(data_path: Path = DATA_PATH) -> int:
     for column in ["beer_name", "beer_style", *SCORE_COLUMNS]:
         df[column] = pd.to_numeric(df[column], errors="coerce") if column in SCORE_COLUMNS else df[column].astype("string").str.strip()
     df["beer_abv"] = pd.to_numeric(df["beer_abv"], errors="coerce")
-    df = df.dropna(subset=["beer_name", "beer_style", *SCORE_COLUMNS])
+    df = df.dropna(subset=["beer_name", "beer_style", "review_overall"])
     if df.empty:
         raise ValueError("Nenhuma linha válida para indexação; a coleção atual foi mantida.")
 
