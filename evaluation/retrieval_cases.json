@@ -1,0 +1,27 @@
+[
+  {
+    "id": "hop-forward-ipa",
+    "query": "Recommend a hop-forward American IPA with a strong aroma.",
+    "relevant_styles": ["American IPA"]
+  },
+  {
+    "id": "rich-stout",
+    "query": "I want a rich, dark stout with roasted and chocolate notes.",
+    "relevant_styles": ["American Imperial Stout", "Russian Imperial Stout"]
+  },
+  {
+    "id": "refreshing-wheat",
+    "query": "Suggest a light, refreshing wheat beer for a warm day.",
+    "relevant_styles": ["American Pale Wheat Ale", "German Hefeweizen"]
+  },
+  {
+    "id": "sour-fruity",
+    "query": "Recommend a tart, fruity sour beer.",
+    "relevant_styles": ["American Wild Ale", "Berliner Weissbier"]
+  },
+  {
+    "id": "strong-belgian",
+    "query": "I am looking for a strong Belgian ale with a complex, fruity profile.",
+    "relevant_styles": ["Belgian Strong Dark Ale", "Belgian Strong Pale Ale"]
+  }
+]

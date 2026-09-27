@@ -1,49 +1,60 @@
+"""Validate and prepare the BeerAdvocate CSV for reproducible ingestion."""
+
+from pathlib import Path
+
 import pandas as pd
-import os
 
-def prepare_data():
-    input_path = "data/raw/beers_dataset.csv"
-    output_path = "data/raw/beers_cleaned.csv"
-    
-    print("⏳ Carregando o dataset bruto. Isso pode levar alguns segundos...")
-    
+INPUT_PATH = Path("data/raw/beers_dataset.csv")
+OUTPUT_PATH = Path("data/raw/beers_cleaned.csv")
+SAMPLE_SIZE = 5_000
+SAMPLE_SEED = 42
+REQUIRED_COLUMNS = {
+    "beer_name", "beer_style", "beer_abv", "review_overall",
+    "review_aroma", "review_appearance", "review_palate", "review_taste",
+}
+OPTIONAL_COLUMNS = {"brewery_name"}
+SCORE_COLUMNS = ["review_overall", "review_aroma", "review_appearance", "review_palate", "review_taste"]
+
+
+def prepare_data(input_path: Path = INPUT_PATH, output_path: Path = OUTPUT_PATH) -> pd.DataFrame:
+    if not input_path.is_file():
+        raise FileNotFoundError(f"Dataset bruto não encontrado: {input_path}")
+
+    df = pd.read_csv(input_path, low_memory=False)
+    missing = sorted(REQUIRED_COLUMNS - set(df.columns))
+    if missing:
+        raise ValueError(f"Colunas obrigatórias ausentes no dataset: {', '.join(missing)}")
+
+    columns = sorted(REQUIRED_COLUMNS | (OPTIONAL_COLUMNS & set(df.columns)))
+    df = df.loc[:, columns].copy()
+    for col in ["beer_name", "beer_style", *OPTIONAL_COLUMNS]:
+        if col in df:
+            df[col] = df[col].astype("string").str.strip()
+            df[col] = df[col].replace("", pd.NA)
+    for col in ["beer_abv", *SCORE_COLUMNS]:
+        df[col] = pd.to_numeric(df[col], errors="coerce")
+
+    # Keep rows with usable identity and ratings; an unknown ABV is valid and stays null.
+    df = df.dropna(subset=["beer_name", "beer_style", *SCORE_COLUMNS])
+    df = df.drop_duplicates(subset=["beer_name", "beer_style"], keep="first")
+    if len(df) > SAMPLE_SIZE:
+        # Fixed seed makes the capped catalog repeatable and avoids source-order bias.
+        df = df.sample(n=SAMPLE_SIZE, random_state=SAMPLE_SEED)
+    df = df.sort_values(["beer_name", "beer_style"], kind="stable").reset_index(drop=True)
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    temporary_path = output_path.with_suffix(output_path.suffix + ".tmp")
     try:
-        df = pd.read_csv(input_path)
-    except FileNotFoundError:
-        print(f"❌ Erro: O arquivo não foi encontrado em {input_path}")
-        return
+        df.to_csv(temporary_path, index=False, encoding="utf-8")
+        temporary_path.replace(output_path)
+    finally:
+        temporary_path.unlink(missing_ok=True)
 
-    print(f"✅ Arquivo carregado! Total de linhas originais: {len(df)}")
-    
-    # 1. Padronizar o nome das colunas (ajuste de acordo com o CSV que você baixou)
-    # Assumindo as colunas clássicas do Kaggle: beer_name, beer_style, beer_abv, review_text
-    colunas_desejadas = ['brewery_name','beer_name', 'beer_style', 'beer_abv', 'review_overall',
-                         'review_aroma','review_appearance','review_palate','review_taste']
-    
-    # Filtra apenas as colunas que importam para a IA, se elas existirem no CSV
-    colunas_presentes = [col for col in colunas_desejadas if col in df.columns]
-    df = df[colunas_presentes]
-    
-    # 2. Limpeza de Dados Vazios (Drop NA)
-    # Remove qualquer linha que não tenha texto de avaliação, pois o NLP precisa de texto
-    df = df.dropna(subset=['review_overall','review_aroma','review_appearance','review_palate',
-                           'review_taste'])
-    
-    # 3. Remover Duplicatas
-    # Mantém apenas a primeira avaliação de cada cerveja para termos variedade
-    df = df.drop_duplicates(subset=['beer_name'])
-    
-    # 4. Amostragem (Crucial para rodar localmente sem travar)
-    # Vamos separar apenas as 5.000 primeiras cervejas únicas para o nosso banco vetorial
-    tamanho_amostra = 5000
-    if len(df) > tamanho_amostra:
-        df = df.head(tamanho_amostra)
-        
-    print(f"🧹 Dados limpos e filtrados! Total de linhas para a IA: {len(df)}")
-    
-    # 5. Salvar o novo CSV limpo
-    df.to_csv(output_path, index=False, encoding='utf-8')
-    print(f"📁 Arquivo salvo pronto para vetorização em: {output_path}")
+    print(f"Linhas lidas: {len(pd.read_csv(input_path, usecols=['beer_name']))}")
+    print(f"Cervejas preparadas: {len(df)} (amostra máxima {SAMPLE_SIZE}, seed {SAMPLE_SEED})")
+    print(f"ABV ausente: {int(df['beer_abv'].isna().sum())}; salvo em {output_path}")
+    return df
+
 
 if __name__ == "__main__":
     prepare_data()

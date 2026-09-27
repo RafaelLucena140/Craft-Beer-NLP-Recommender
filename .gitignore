@@ -22,6 +22,7 @@ __pycache__/
 data/
 *.csv
 *.json
+!evaluation/retrieval_cases.json
 *.parquet
 *.xlsx
 

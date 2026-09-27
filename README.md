@@ -55,3 +55,21 @@ Ao executar a aplicação, você pode experimentar buscas que correlacionam esti
     ```bash
     streamlit run app.py
     ```
+
+## V2: avaliação offline e ingestão segura
+
+A V2 adiciona um conjunto versionado de consultas e um avaliador offline da recuperação. Os casos iniciais em `evaluation/retrieval_cases.json` usam estilos como rótulos de relevância; esse sinal mede correspondência de categoria e é um **proxy**, não uma avaliação humana de relevância semântica. Para uma avaliação de portfólio mais forte, revise os casos e preencha `relevant_beer_names` com cervejas relevantes para cada consulta.
+
+Execute a preparação e a ingestão antes da avaliação:
+
+```bash
+python data_pipeline/clean_data.py
+python data_pipeline/ingest_vectors.py
+python data_pipeline/evaluate_retrieval.py --cases evaluation/retrieval_cases.json --output evaluation/retrieval_report.json -k 5
+```
+
+O relatório apresenta *Precision@k*, *Recall@k*, *Hit Rate@k*, *MRR* e *nDCG@k*, além dos itens recuperados por consulta. Ele é gerado localmente e não deve ser interpretado como resultado publicado enquanto o dataset não estiver disponível e os rótulos não forem revisados.
+
+A limpeza agora valida o esquema, converte notas e ABV para números, mantém cervejas cujo ABV é desconhecido e amostra até 5.000 cervejas com semente fixa. O CSV temporário só substitui a saída depois de ser gravado. A ingestão usa IDs determinísticos, lotes e uma coleção de staging; valida a contagem antes da troca, preservando a coleção anterior se a construção ou validação falhar. Campos de ABV desconhecido são armazenados como `abv_known=false`.
+
+As configurações podem ser sobrescritas com `BEER_DATA_PATH`, `CHROMA_HOST`, `CHROMA_PORT`, `CHROMA_COLLECTION` e `EMBEDDING_MODEL`.
