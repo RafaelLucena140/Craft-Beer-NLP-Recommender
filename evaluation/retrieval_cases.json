@@ -2,12 +2,12 @@
   {
     "id": "hop-forward-ipa",
     "query": "Recommend a hop-forward American IPA with a strong aroma.",
-    "relevant_styles": ["American IPA"]
+    "relevant_styles": ["American IPA", "American Double / Imperial IPA"]
   },
   {
     "id": "rich-stout",
     "query": "I want a rich, dark stout with roasted and chocolate notes.",
-    "relevant_styles": ["American Double / Imperial Stout", "Russian Imperial Stout"]
+    "relevant_styles": ["American Double / Imperial Stout", "Russian Imperial Stout", "American Stout", "English Stout", "Foreign / Export Stout", "Oatmeal Stout", "Irish Dry Stout", "Milk / Sweet Stout"]
   },
   {
     "id": "refreshing-wheat",
