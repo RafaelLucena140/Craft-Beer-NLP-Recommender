@@ -7,12 +7,12 @@
   {
     "id": "rich-stout",
     "query": "I want a rich, dark stout with roasted and chocolate notes.",
-    "relevant_styles": ["American Imperial Stout", "Russian Imperial Stout"]
+    "relevant_styles": ["American Double / Imperial Stout", "Russian Imperial Stout"]
   },
   {
     "id": "refreshing-wheat",
     "query": "Suggest a light, refreshing wheat beer for a warm day.",
-    "relevant_styles": ["American Pale Wheat Ale", "German Hefeweizen"]
+    "relevant_styles": ["American Pale Wheat Ale", "Hefeweizen"]
   },
   {
     "id": "sour-fruity",
