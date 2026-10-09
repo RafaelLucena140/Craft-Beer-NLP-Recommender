@@ -23,6 +23,8 @@ data/
 *.csv
 *.json
 !evaluation/retrieval_cases.json
+!evaluation/retrieval_report.json
+!evaluation/human_review_template.csv
 *.parquet
 *.xlsx
 

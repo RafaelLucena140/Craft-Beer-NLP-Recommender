@@ -1,0 +1,5445 @@
+{
+  "generated_at": "2026-10-09T16:58:59.881424+00:00",
+  "collection": "craft_beers",
+  "collection_size": 5000,
+  "k": 5,
+  "cases_count": 50,
+  "evaluation_mode": "style_proxy",
+  "metrics": {
+    "precision_at_k": 0.636,
+    "recall_at_k": 0.06321316132671333,
+    "hit_rate_at_k": 0.88,
+    "reciprocal_rank": 0.7433333333333334,
+    "ndcg_at_k": 0.642045504236477
+  },
+  "baseline": {
+    "name": "vector_similarity",
+    "metrics": {
+      "precision_at_k": 0.6759999999999999,
+      "recall_at_k": 0.06811893109272515,
+      "hit_rate_at_k": 0.92,
+      "reciprocal_rank": 0.8440000000000001,
+      "ndcg_at_k": 0.6963671524683336
+    }
+  },
+  "reranked": {
+    "name": "vector_similarity_plus_business_signals",
+    "metrics": {
+      "precision_at_k": 0.636,
+      "recall_at_k": 0.06321316132671333,
+      "hit_rate_at_k": 0.88,
+      "reciprocal_rank": 0.7433333333333334,
+      "ndcg_at_k": 0.642045504236477
+    }
+  },
+  "reranking_delta": {
+    "precision_at_k": -0.039999999999999925,
+    "recall_at_k": -0.004905769766011828,
+    "hit_rate_at_k": -0.040000000000000036,
+    "reciprocal_rank": -0.10066666666666668,
+    "ndcg_at_k": -0.05432164823185659
+  },
+  "cases": [
+    {
+      "id": "hop-forward-ipa",
+      "query": "Recommend a hop-forward American IPA with a strong aroma.",
+      "baseline": {
+        "id": "hop-forward-ipa",
+        "query": "Recommend a hop-forward American IPA with a strong aroma.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.011933174224343675,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Revolution American IPA",
+            "beer_style": "American IPA",
+            "abv": 6.5,
+            "review_overall": 4.0,
+            "review_count": 3,
+            "relevant": true
+          },
+          {
+            "beer_name": "Otter IPA",
+            "beer_style": "American IPA",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "HopHannia IPA",
+            "beer_style": "American IPA",
+            "abv": 5.7,
+            "review_overall": 2.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Homegrown Hairy John IPA",
+            "beer_style": "American IPA",
+            "abv": 9.0,
+            "review_overall": 4.0,
+            "review_count": 2,
+            "relevant": true
+          },
+          {
+            "beer_name": "Hop Knot IPA",
+            "beer_style": "American IPA",
+            "abv": 6.7,
+            "review_overall": 3.7,
+            "review_count": 5,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "hop-forward-ipa",
+        "query": "Recommend a hop-forward American IPA with a strong aroma.",
+        "relevant_results": 4,
+        "precision_at_k": 0.8,
+        "recall_at_k": 0.00954653937947494,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.8539316501572937,
+        "retrieved": [
+          {
+            "beer_name": "DuganA IPA",
+            "beer_style": "American Double / Imperial IPA",
+            "abv": 8.5,
+            "review_overall": 4.032719836400818,
+            "review_count": 489,
+            "relevant": true
+          },
+          {
+            "beer_name": "Big Hop IPA",
+            "beer_style": "American IPA",
+            "abv": 5.8,
+            "review_overall": 4.1,
+            "review_count": 80,
+            "relevant": true
+          },
+          {
+            "beer_name": "Revolution American IPA",
+            "beer_style": "American IPA",
+            "abv": 6.5,
+            "review_overall": 4.0,
+            "review_count": 3,
+            "relevant": true
+          },
+          {
+            "beer_name": "Hoppy Otter IPA",
+            "beer_style": "English India Pale Ale (IPA)",
+            "abv": 6.8,
+            "review_overall": 3.8181818181818175,
+            "review_count": 44,
+            "relevant": false
+          },
+          {
+            "beer_name": "Hophead Imperial IPA",
+            "beer_style": "American Double / Imperial IPA",
+            "abv": 9.2,
+            "review_overall": 4.25,
+            "review_count": 28,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "rich-stout",
+      "query": "I want a rich, dark stout with roasted and chocolate notes.",
+      "baseline": {
+        "id": "rich-stout",
+        "query": "I want a rich, dark stout with roasted and chocolate notes.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.012376237623762377,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Milk Chocolate Stout",
+            "beer_style": "Milk / Sweet Stout",
+            "abv": "",
+            "review_overall": 3.5,
+            "review_count": 4,
+            "relevant": true
+          },
+          {
+            "beer_name": "Roast Mint Stout",
+            "beer_style": "American Stout",
+            "abv": 4.2,
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Black Lab Stout",
+            "beer_style": "Milk / Sweet Stout",
+            "abv": 5.5,
+            "review_overall": 4.066666666666666,
+            "review_count": 15,
+            "relevant": true
+          },
+          {
+            "beer_name": "Heavy Handed: Double Chocolate Stout",
+            "beer_style": "American Double / Imperial Stout",
+            "abv": 7.5,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Chocolate Cherry Stout",
+            "beer_style": "American Stout",
+            "abv": 5.3,
+            "review_overall": 4.5,
+            "review_count": 1,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "rich-stout",
+        "query": "I want a rich, dark stout with roasted and chocolate notes.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.012376237623762377,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Dark Horse Too Cream Stout",
+            "beer_style": "Milk / Sweet Stout",
+            "abv": 8.0,
+            "review_overall": 3.891025641025641,
+            "review_count": 312,
+            "relevant": true
+          },
+          {
+            "beer_name": "Black Lab Stout",
+            "beer_style": "Milk / Sweet Stout",
+            "abv": 5.5,
+            "review_overall": 4.066666666666666,
+            "review_count": 15,
+            "relevant": true
+          },
+          {
+            "beer_name": "Milk Chocolate Stout",
+            "beer_style": "Milk / Sweet Stout",
+            "abv": "",
+            "review_overall": 3.5,
+            "review_count": 4,
+            "relevant": true
+          },
+          {
+            "beer_name": "Oliver's Blackfriar Stout",
+            "beer_style": "American Stout",
+            "abv": 4.9,
+            "review_overall": 4.0,
+            "review_count": 9,
+            "relevant": true
+          },
+          {
+            "beer_name": "Barrel Aged Imperial Stout Trooper",
+            "beer_style": "Russian Imperial Stout",
+            "abv": "",
+            "review_overall": 3.5,
+            "review_count": 78,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "refreshing-wheat",
+      "query": "Suggest a light, refreshing wheat beer for a warm day.",
+      "baseline": {
+        "id": "refreshing-wheat",
+        "query": "Suggest a light, refreshing wheat beer for a warm day.",
+        "relevant_results": 3,
+        "precision_at_k": 0.6,
+        "recall_at_k": 0.014423076923076924,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.6843515475204855,
+        "retrieved": [
+          {
+            "beer_name": "Sun Juice Wheat",
+            "beer_style": "American Pale Wheat Ale",
+            "abv": "",
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Wheat",
+            "beer_style": "American Pale Wheat Ale",
+            "abv": 5.0,
+            "review_overall": 2.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Red Wheat",
+            "beer_style": "American Dark Wheat Ale",
+            "abv": 5.5,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Brewer Patriot Collection - James Madison Dark Wheat Ale",
+            "beer_style": "American Dark Wheat Ale",
+            "abv": "",
+            "review_overall": 3.655367231638418,
+            "review_count": 177,
+            "relevant": false
+          },
+          {
+            "beer_name": "Wheat Freak",
+            "beer_style": "American Pale Wheat Ale",
+            "abv": "",
+            "review_overall": 4.5,
+            "review_count": 1,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "refreshing-wheat",
+        "query": "Suggest a light, refreshing wheat beer for a warm day.",
+        "relevant_results": 3,
+        "precision_at_k": 0.6,
+        "recall_at_k": 0.014423076923076924,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg_at_k": 0.5296347172140421,
+        "retrieved": [
+          {
+            "beer_name": "Brewer Patriot Collection - James Madison Dark Wheat Ale",
+            "beer_style": "American Dark Wheat Ale",
+            "abv": "",
+            "review_overall": 3.655367231638418,
+            "review_count": 177,
+            "relevant": false
+          },
+          {
+            "beer_name": "Samuel Adams Coastal Wheat",
+            "beer_style": "American Pale Wheat Ale",
+            "abv": 5.3,
+            "review_overall": 3.376842105263158,
+            "review_count": 475,
+            "relevant": true
+          },
+          {
+            "beer_name": "Sun Juice Wheat",
+            "beer_style": "American Pale Wheat Ale",
+            "abv": "",
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Raspberry Wheat Ale",
+            "beer_style": "American Pale Wheat Ale",
+            "abv": 4.5,
+            "review_overall": 3.147058823529412,
+            "review_count": 170,
+            "relevant": true
+          },
+          {
+            "beer_name": "Festivus Winter Warmer",
+            "beer_style": "Winter Warmer",
+            "abv": 5.5,
+            "review_overall": 3.9,
+            "review_count": 5,
+            "relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "sour-fruity",
+      "query": "Recommend a tart, fruity sour beer.",
+      "baseline": {
+        "id": "sour-fruity",
+        "query": "Recommend a tart, fruity sour beer.",
+        "relevant_results": 1,
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.01639344262295082,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg_at_k": 0.21398626473452756,
+        "retrieved": [
+          {
+            "beer_name": "Raspberry Tart",
+            "beer_style": "Kristalweizen",
+            "abv": 5.0,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Sour Cherry Porter",
+            "beer_style": "American Wild Ale",
+            "abv": 5.5,
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Apple Brandy Barrel-Aged Dedication",
+            "beer_style": "Dubbel",
+            "abv": 10.0,
+            "review_overall": 4.0,
+            "review_count": 2,
+            "relevant": false
+          },
+          {
+            "beer_name": "Catherine The Great W/Sour Cherries",
+            "beer_style": "Belgian Strong Dark Ale",
+            "abv": 11.0,
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "77 Anniversary Ale (Dry-Hopped)",
+            "beer_style": "American Barleywine",
+            "abv": 7.7,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": false
+          }
+        ]
+      },
+      "reranked": {
+        "id": "sour-fruity",
+        "query": "Recommend a tart, fruity sour beer.",
+        "relevant_results": 1,
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.01639344262295082,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 0.3333333333333333,
+        "ndcg_at_k": 0.16958010263680806,
+        "retrieved": [
+          {
+            "beer_name": "Oude Tart",
+            "beer_style": "Flanders Red Ale",
+            "abv": 7.5,
+            "review_overall": 4.261744966442953,
+            "review_count": 149,
+            "relevant": false
+          },
+          {
+            "beer_name": "Raspberry Tart",
+            "beer_style": "Kristalweizen",
+            "abv": 5.0,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Sour Cherry Porter",
+            "beer_style": "American Wild Ale",
+            "abv": 5.5,
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Apple Brandy Barrel-Aged Dedication",
+            "beer_style": "Dubbel",
+            "abv": 10.0,
+            "review_overall": 4.0,
+            "review_count": 2,
+            "relevant": false
+          },
+          {
+            "beer_name": "Suntory Malt's Beer",
+            "beer_style": "German Pilsener",
+            "abv": 5.0,
+            "review_overall": 3.730769230769231,
+            "review_count": 13,
+            "relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "strong-belgian",
+      "query": "I am looking for a strong Belgian ale with a complex, fruity profile.",
+      "baseline": {
+        "id": "strong-belgian",
+        "query": "I am looking for a strong Belgian ale with a complex, fruity profile.",
+        "relevant_results": 2,
+        "precision_at_k": 0.4,
+        "recall_at_k": 0.017543859649122806,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.5531464700081437,
+        "retrieved": [
+          {
+            "beer_name": "Belgian Old Ale",
+            "beer_style": "Belgian Strong Pale Ale",
+            "abv": 7.1,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Spanish Springs Strong Belgian Ale",
+            "beer_style": "Belgian Strong Dark Ale",
+            "abv": 11.0,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Triple Gold Belgian Ale",
+            "beer_style": "Tripel",
+            "abv": "",
+            "review_overall": 3.6666666666666665,
+            "review_count": 3,
+            "relevant": false
+          },
+          {
+            "beer_name": "Dremmwel Rousse",
+            "beer_style": "Belgian Dark Ale",
+            "abv": 6.0,
+            "review_overall": 3.25,
+            "review_count": 2,
+            "relevant": false
+          },
+          {
+            "beer_name": "Serafijn Belgian Pale Ale",
+            "beer_style": "Belgian Pale Ale",
+            "abv": 6.2,
+            "review_overall": 4.227272727272728,
+            "review_count": 11,
+            "relevant": false
+          }
+        ]
+      },
+      "reranked": {
+        "id": "strong-belgian",
+        "query": "I am looking for a strong Belgian ale with a complex, fruity profile.",
+        "relevant_results": 2,
+        "precision_at_k": 0.4,
+        "recall_at_k": 0.017543859649122806,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg_at_k": 0.36005461457723403,
+        "retrieved": [
+          {
+            "beer_name": "Oude Tart",
+            "beer_style": "Flanders Red Ale",
+            "abv": 7.5,
+            "review_overall": 4.261744966442953,
+            "review_count": 149,
+            "relevant": false
+          },
+          {
+            "beer_name": "Dernière Volonté Réserve Spéciale (Vieillie En Fût De Pinot Noir)",
+            "beer_style": "Belgian Strong Pale Ale",
+            "abv": 7.5,
+            "review_overall": 4.088235294117647,
+            "review_count": 17,
+            "relevant": true
+          },
+          {
+            "beer_name": "Serafijn Belgian Pale Ale",
+            "beer_style": "Belgian Pale Ale",
+            "abv": 6.2,
+            "review_overall": 4.227272727272728,
+            "review_count": 11,
+            "relevant": false
+          },
+          {
+            "beer_name": "Sloeber",
+            "beer_style": "Belgian Strong Pale Ale",
+            "abv": 7.5,
+            "review_overall": 3.844262295081968,
+            "review_count": 61,
+            "relevant": true
+          },
+          {
+            "beer_name": "Saranac Belgian Ale",
+            "beer_style": "Belgian Pale Ale",
+            "abv": 5.9,
+            "review_overall": 3.3678861788617884,
+            "review_count": 246,
+            "relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "citrus-pale-ale",
+      "query": "Find a citrusy, floral pale ale with moderate bitterness.",
+      "baseline": {
+        "id": "citrus-pale-ale",
+        "query": "Find a citrusy, floral pale ale with moderate bitterness.",
+        "relevant_results": 4,
+        "precision_at_k": 0.8,
+        "recall_at_k": 0.015209125475285171,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.7860137352654724,
+        "retrieved": [
+          {
+            "beer_name": "Fresh Hop Extra Pale Ale",
+            "beer_style": "American Pale Ale (APA)",
+            "abv": 7.0,
+            "review_overall": 5.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Twist Of Fate Bitter Ale",
+            "beer_style": "Extra Special / Strong Bitter (ESB)",
+            "abv": 5.6,
+            "review_overall": 4.09375,
+            "review_count": 48,
+            "relevant": false
+          },
+          {
+            "beer_name": "The Bitter End Pale Ale",
+            "beer_style": "American Pale Ale (APA)",
+            "abv": 5.2,
+            "review_overall": 3.850877192982456,
+            "review_count": 285,
+            "relevant": true
+          },
+          {
+            "beer_name": "Southern Pale Ale",
+            "beer_style": "American Pale Ale (APA)",
+            "abv": 5.3,
+            "review_overall": 3.866071428571429,
+            "review_count": 56,
+            "relevant": true
+          },
+          {
+            "beer_name": "Tall Tale Pale Ale (dry-hopped With Glacier)",
+            "beer_style": "American Pale Ale (APA)",
+            "abv": 5.7,
+            "review_overall": 4.5,
+            "review_count": 1,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "citrus-pale-ale",
+        "query": "Find a citrusy, floral pale ale with moderate bitterness.",
+        "relevant_results": 4,
+        "precision_at_k": 0.8,
+        "recall_at_k": 0.015209125475285171,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg_at_k": 0.6608397947263839,
+        "retrieved": [
+          {
+            "beer_name": "Twist Of Fate Bitter Ale",
+            "beer_style": "Extra Special / Strong Bitter (ESB)",
+            "abv": 5.6,
+            "review_overall": 4.09375,
+            "review_count": 48,
+            "relevant": false
+          },
+          {
+            "beer_name": "The Bitter End Pale Ale",
+            "beer_style": "American Pale Ale (APA)",
+            "abv": 5.2,
+            "review_overall": 3.850877192982456,
+            "review_count": 285,
+            "relevant": true
+          },
+          {
+            "beer_name": "Southern Pale Ale",
+            "beer_style": "American Pale Ale (APA)",
+            "abv": 5.3,
+            "review_overall": 3.866071428571429,
+            "review_count": 56,
+            "relevant": true
+          },
+          {
+            "beer_name": "Fresh Hop Extra Pale Ale",
+            "beer_style": "American Pale Ale (APA)",
+            "abv": 7.0,
+            "review_overall": 5.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Pipers Pale Ale",
+            "beer_style": "American Pale Ale (APA)",
+            "abv": 6.0,
+            "review_overall": 3.602941176470588,
+            "review_count": 68,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "caramel-amber",
+      "query": "I want an amber ale with a malty backbone and caramel notes.",
+      "baseline": {
+        "id": "caramel-amber",
+        "query": "I want an amber ale with a malty backbone and caramel notes.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.02512562814070352,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Double Take Amber Ale",
+            "beer_style": "American Amber / Red Ale",
+            "abv": 5.1,
+            "review_overall": 3.0,
+            "review_count": 2,
+            "relevant": true
+          },
+          {
+            "beer_name": "Fishbones Amber Ale",
+            "beer_style": "American Amber / Red Ale",
+            "abv": 5.2,
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Amber Ale",
+            "beer_style": "American Amber / Red Ale",
+            "abv": "",
+            "review_overall": 3.9444444444444446,
+            "review_count": 9,
+            "relevant": true
+          },
+          {
+            "beer_name": "Celebration Amber Ale",
+            "beer_style": "American Amber / Red Ale",
+            "abv": 5.0,
+            "review_overall": 3.25,
+            "review_count": 4,
+            "relevant": true
+          },
+          {
+            "beer_name": "Honey Amber Ale",
+            "beer_style": "American Amber / Red Ale",
+            "abv": 5.8,
+            "review_overall": 3.911764705882353,
+            "review_count": 17,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "caramel-amber",
+        "query": "I want an amber ale with a malty backbone and caramel notes.",
+        "relevant_results": 4,
+        "precision_at_k": 0.8,
+        "recall_at_k": 0.020100502512562814,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg_at_k": 0.6608397947263839,
+        "retrieved": [
+          {
+            "beer_name": "Alaskan Amber",
+            "beer_style": "Altbier",
+            "abv": 5.3,
+            "review_overall": 3.847082494969819,
+            "review_count": 497,
+            "relevant": false
+          },
+          {
+            "beer_name": "Honey Amber Ale",
+            "beer_style": "American Amber / Red Ale",
+            "abv": 5.8,
+            "review_overall": 3.911764705882353,
+            "review_count": 17,
+            "relevant": true
+          },
+          {
+            "beer_name": "Amber Ale",
+            "beer_style": "American Amber / Red Ale",
+            "abv": 5.2,
+            "review_overall": 4.25,
+            "review_count": 10,
+            "relevant": true
+          },
+          {
+            "beer_name": "Amber Ale",
+            "beer_style": "American Amber / Red Ale",
+            "abv": "",
+            "review_overall": 3.9444444444444446,
+            "review_count": 9,
+            "relevant": true
+          },
+          {
+            "beer_name": "Amber Ale",
+            "beer_style": "American Amber / Red Ale",
+            "abv": 4.6,
+            "review_overall": 3.703703703703704,
+            "review_count": 27,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "nutty-brown",
+      "query": "Recommend a smooth brown ale with toasted bread and nutty flavors.",
+      "baseline": {
+        "id": "nutty-brown",
+        "query": "Recommend a smooth brown ale with toasted bread and nutty flavors.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.03424657534246575,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Nut Brown Ale",
+            "beer_style": "English Brown Ale",
+            "abv": 5.3,
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Rail Ale Nut Brown Ale",
+            "beer_style": "American Brown Ale",
+            "abv": 4.7,
+            "review_overall": 3.8333333333333335,
+            "review_count": 3,
+            "relevant": true
+          },
+          {
+            "beer_name": "Nutty Nut Brown Ale",
+            "beer_style": "English Brown Ale",
+            "abv": 5.0,
+            "review_overall": 3.5,
+            "review_count": 2,
+            "relevant": true
+          },
+          {
+            "beer_name": "Northumbrian Brown Ale",
+            "beer_style": "English Brown Ale",
+            "abv": 4.5,
+            "review_overall": 3.65,
+            "review_count": 20,
+            "relevant": true
+          },
+          {
+            "beer_name": "T.D.'s Nut Brown Ale",
+            "beer_style": "English Brown Ale",
+            "abv": "",
+            "review_overall": 3.25,
+            "review_count": 4,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "nutty-brown",
+        "query": "Recommend a smooth brown ale with toasted bread and nutty flavors.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.03424657534246575,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Nut Brown Ale",
+            "beer_style": "English Brown Ale",
+            "abv": 5.4,
+            "review_overall": 3.8684210526315783,
+            "review_count": 57,
+            "relevant": true
+          },
+          {
+            "beer_name": "Northumbrian Brown Ale",
+            "beer_style": "English Brown Ale",
+            "abv": 4.5,
+            "review_overall": 3.65,
+            "review_count": 20,
+            "relevant": true
+          },
+          {
+            "beer_name": "Newcastle Brown Ale",
+            "beer_style": "English Brown Ale",
+            "abv": 4.7,
+            "review_overall": 3.645224171539961,
+            "review_count": 1539,
+            "relevant": true
+          },
+          {
+            "beer_name": "Rail Ale Nut Brown Ale",
+            "beer_style": "American Brown Ale",
+            "abv": 4.7,
+            "review_overall": 3.8333333333333335,
+            "review_count": 3,
+            "relevant": true
+          },
+          {
+            "beer_name": "Nut Brown Ale",
+            "beer_style": "English Brown Ale",
+            "abv": 5.3,
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "chocolate-porter",
+      "query": "Suggest a dark porter with chocolate and coffee character.",
+      "baseline": {
+        "id": "chocolate-porter",
+        "query": "Suggest a dark porter with chocolate and coffee character.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.02074688796680498,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Chocolate Espresso Porter",
+            "beer_style": "American Porter",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 2,
+            "relevant": true
+          },
+          {
+            "beer_name": "Chocolate Porter",
+            "beer_style": "American Porter",
+            "abv": "",
+            "review_overall": 3.6666666666666665,
+            "review_count": 3,
+            "relevant": true
+          },
+          {
+            "beer_name": "XXX Chocolate Porter",
+            "beer_style": "English Porter",
+            "abv": 6.8,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Chocolate Thunder Porter",
+            "beer_style": "English Porter",
+            "abv": 5.6,
+            "review_overall": 3.923076923076923,
+            "review_count": 13,
+            "relevant": true
+          },
+          {
+            "beer_name": "Black Snow Coffee Porter",
+            "beer_style": "American Porter",
+            "abv": 5.0,
+            "review_overall": 4.392857142857143,
+            "review_count": 14,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "chocolate-porter",
+        "query": "Suggest a dark porter with chocolate and coffee character.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.02074688796680498,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "CB's Double Dark Cream Porter",
+            "beer_style": "American Porter",
+            "abv": 5.0,
+            "review_overall": 4.016666666666667,
+            "review_count": 60,
+            "relevant": true
+          },
+          {
+            "beer_name": "Chocolate Thunder Porter",
+            "beer_style": "English Porter",
+            "abv": 5.6,
+            "review_overall": 3.923076923076923,
+            "review_count": 13,
+            "relevant": true
+          },
+          {
+            "beer_name": "Black Snow Coffee Porter",
+            "beer_style": "American Porter",
+            "abv": 5.0,
+            "review_overall": 4.392857142857143,
+            "review_count": 14,
+            "relevant": true
+          },
+          {
+            "beer_name": "Imperial Milk Porter - Stranahan Whiskey Barrel Aged",
+            "beer_style": "American Porter",
+            "abv": "",
+            "review_overall": 4.11864406779661,
+            "review_count": 59,
+            "relevant": true
+          },
+          {
+            "beer_name": "Chocolate Porter",
+            "beer_style": "American Porter",
+            "abv": "",
+            "review_overall": 3.6666666666666665,
+            "review_count": 3,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "english-porter",
+      "query": "I would like a classic English porter, balanced and easy to drink.",
+      "baseline": {
+        "id": "english-porter",
+        "query": "I would like a classic English porter, balanced and easy to drink.",
+        "relevant_results": 1,
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.020833333333333332,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 0.25,
+        "ndcg_at_k": 0.14606834984270645,
+        "retrieved": [
+          {
+            "beer_name": "Imperial Porter",
+            "beer_style": "American Porter",
+            "abv": 8.5,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Coffee Porter",
+            "beer_style": "American Porter",
+            "abv": 5.0,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Baltic Porter",
+            "beer_style": "Baltic Porter",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Ogden Porter",
+            "beer_style": "English Porter",
+            "abv": "",
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Tea Party Porter",
+            "beer_style": "American Porter",
+            "abv": 4.6,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": false
+          }
+        ]
+      },
+      "reranked": {
+        "id": "english-porter",
+        "query": "I would like a classic English porter, balanced and easy to drink.",
+        "relevant_results": 1,
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.020833333333333332,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg_at_k": 0.21398626473452756,
+        "retrieved": [
+          {
+            "beer_name": "Imperial Porter 2004 ( Barrel Aged One Year)",
+            "beer_style": "Baltic Porter",
+            "abv": 7.2,
+            "review_overall": 4.409090909090909,
+            "review_count": 11,
+            "relevant": false
+          },
+          {
+            "beer_name": "Mill Street Vanilla Porter",
+            "beer_style": "English Porter",
+            "abv": 5.0,
+            "review_overall": 3.2,
+            "review_count": 10,
+            "relevant": true
+          },
+          {
+            "beer_name": "Imperial Porter",
+            "beer_style": "American Porter",
+            "abv": 8.5,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Porter Porter",
+            "beer_style": "American Porter",
+            "abv": 7.9,
+            "review_overall": 4.5,
+            "review_count": 5,
+            "relevant": false
+          },
+          {
+            "beer_name": "Coffee Porter",
+            "beer_style": "American Porter",
+            "abv": 5.0,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "czech-pilsner",
+      "query": "Find a crisp Czech pilsner with a clean finish and gentle hop bitterness.",
+      "baseline": {
+        "id": "czech-pilsner",
+        "query": "Find a crisp Czech pilsner with a clean finish and gentle hop bitterness.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.07575757575757576,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Czech-Style Pilsner (Czechet)",
+            "beer_style": "Czech Pilsener",
+            "abv": 4.6,
+            "review_overall": 3.411764705882353,
+            "review_count": 34,
+            "relevant": true
+          },
+          {
+            "beer_name": "Czech Pilsner",
+            "beer_style": "Czech Pilsener",
+            "abv": 5.0,
+            "review_overall": 4.25,
+            "review_count": 26,
+            "relevant": true
+          },
+          {
+            "beer_name": "Czech Pilsener",
+            "beer_style": "Czech Pilsener",
+            "abv": 5.5,
+            "review_overall": 4.166666666666667,
+            "review_count": 3,
+            "relevant": true
+          },
+          {
+            "beer_name": "Czech Pilsener",
+            "beer_style": "Czech Pilsener",
+            "abv": "",
+            "review_overall": 4.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Smoked Pils",
+            "beer_style": "Czech Pilsener",
+            "abv": 4.8,
+            "review_overall": 4.25,
+            "review_count": 2,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "czech-pilsner",
+        "query": "Find a crisp Czech pilsner with a clean finish and gentle hop bitterness.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.07575757575757576,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Czech-Style Pilsner (Czechet)",
+            "beer_style": "Czech Pilsener",
+            "abv": 4.6,
+            "review_overall": 3.411764705882353,
+            "review_count": 34,
+            "relevant": true
+          },
+          {
+            "beer_name": "Czech Pilsner",
+            "beer_style": "Czech Pilsener",
+            "abv": 5.0,
+            "review_overall": 4.25,
+            "review_count": 26,
+            "relevant": true
+          },
+          {
+            "beer_name": "Czech Pilsener",
+            "beer_style": "Czech Pilsener",
+            "abv": 5.5,
+            "review_overall": 4.166666666666667,
+            "review_count": 3,
+            "relevant": true
+          },
+          {
+            "beer_name": "Czech Mate",
+            "beer_style": "Czech Pilsener",
+            "abv": 4.8,
+            "review_overall": 4.016129032258065,
+            "review_count": 31,
+            "relevant": true
+          },
+          {
+            "beer_name": "Czech Pilsener",
+            "beer_style": "Czech Pilsener",
+            "abv": "",
+            "review_overall": 4.5,
+            "review_count": 1,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "german-pilsner",
+      "query": "Recommend a dry German pilsner with a snappy, bitter finish.",
+      "baseline": {
+        "id": "german-pilsner",
+        "query": "Recommend a dry German pilsner with a snappy, bitter finish.",
+        "relevant_results": 4,
+        "precision_at_k": 0.8,
+        "recall_at_k": 0.043478260869565216,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.8687949224876582,
+        "retrieved": [
+          {
+            "beer_name": "Pilsner",
+            "beer_style": "German Pilsener",
+            "abv": 4.7,
+            "review_overall": 3.75,
+            "review_count": 4,
+            "relevant": true
+          },
+          {
+            "beer_name": "Villacher Glockner Pils",
+            "beer_style": "German Pilsener",
+            "abv": 4.9,
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Gessner Premium Pils",
+            "beer_style": "German Pilsener",
+            "abv": 4.9,
+            "review_overall": 3.25,
+            "review_count": 2,
+            "relevant": true
+          },
+          {
+            "beer_name": "Jagdherren Pils",
+            "beer_style": "German Pilsener",
+            "abv": 4.8,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Feels Good Imperial Pilsner",
+            "beer_style": "American Double / Imperial Pilsner",
+            "abv": 7.5,
+            "review_overall": 3.857142857142857,
+            "review_count": 7,
+            "relevant": false
+          }
+        ]
+      },
+      "reranked": {
+        "id": "german-pilsner",
+        "query": "Recommend a dry German pilsner with a snappy, bitter finish.",
+        "relevant_results": 3,
+        "precision_at_k": 0.6,
+        "recall_at_k": 0.03260869565217391,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.6548086577531307,
+        "retrieved": [
+          {
+            "beer_name": "Peregrine Pilsner",
+            "beer_style": "German Pilsener",
+            "abv": 4.7,
+            "review_overall": 4.16,
+            "review_count": 25,
+            "relevant": true
+          },
+          {
+            "beer_name": "Czech-Style Pilsner (Czechet)",
+            "beer_style": "Czech Pilsener",
+            "abv": 4.6,
+            "review_overall": 3.411764705882353,
+            "review_count": 34,
+            "relevant": false
+          },
+          {
+            "beer_name": "Pilsner",
+            "beer_style": "German Pilsener",
+            "abv": 4.7,
+            "review_overall": 3.75,
+            "review_count": 4,
+            "relevant": true
+          },
+          {
+            "beer_name": "Old Style Pilsner",
+            "beer_style": "German Pilsener",
+            "abv": 5.0,
+            "review_overall": 3.2096774193548385,
+            "review_count": 31,
+            "relevant": true
+          },
+          {
+            "beer_name": "Feels Good Imperial Pilsner",
+            "beer_style": "American Double / Imperial Pilsner",
+            "abv": 7.5,
+            "review_overall": 3.857142857142857,
+            "review_count": 7,
+            "relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "light-lager",
+      "query": "I want a very light, refreshing lager for a hot afternoon.",
+      "baseline": {
+        "id": "light-lager",
+        "query": "I want a very light, refreshing lager for a hot afternoon.",
+        "relevant_results": 2,
+        "precision_at_k": 0.4,
+        "recall_at_k": 0.011049723756906077,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.4703652827859579,
+        "retrieved": [
+          {
+            "beer_name": "Sun Lager",
+            "beer_style": "American Adjunct Lager",
+            "abv": "",
+            "review_overall": 3.333333333333333,
+            "review_count": 3,
+            "relevant": true
+          },
+          {
+            "beer_name": "Li'L Lucy's Hot Pepper Ale",
+            "beer_style": "Chile Beer",
+            "abv": "",
+            "review_overall": 3.107142857142857,
+            "review_count": 14,
+            "relevant": false
+          },
+          {
+            "beer_name": "Bright Lager",
+            "beer_style": "Euro Pale Lager",
+            "abv": 4.3,
+            "review_overall": 3.25,
+            "review_count": 2,
+            "relevant": false
+          },
+          {
+            "beer_name": "London Lager (Liquid London)",
+            "beer_style": "Euro Pale Lager",
+            "abv": 4.5,
+            "review_overall": 3.4,
+            "review_count": 5,
+            "relevant": false
+          },
+          {
+            "beer_name": "All American Lager",
+            "beer_style": "American Adjunct Lager",
+            "abv": "",
+            "review_overall": 2.25,
+            "review_count": 2,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "light-lager",
+        "query": "I want a very light, refreshing lager for a hot afternoon.",
+        "relevant_results": 2,
+        "precision_at_k": 0.4,
+        "recall_at_k": 0.011049723756906077,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.5531464700081437,
+        "retrieved": [
+          {
+            "beer_name": "Lager",
+            "beer_style": "American Pale Lager",
+            "abv": 5.0,
+            "review_overall": 3.618181818181818,
+            "review_count": 55,
+            "relevant": true
+          },
+          {
+            "beer_name": "Heavy Seas - Classic Lager",
+            "beer_style": "American Pale Lager",
+            "abv": 5.0,
+            "review_overall": 3.909090909090909,
+            "review_count": 22,
+            "relevant": true
+          },
+          {
+            "beer_name": "Li'L Lucy's Hot Pepper Ale",
+            "beer_style": "Chile Beer",
+            "abv": "",
+            "review_overall": 3.107142857142857,
+            "review_count": 14,
+            "relevant": false
+          },
+          {
+            "beer_name": "Henry Weinhard's Classic Dark Lager",
+            "beer_style": "Munich Dunkel Lager",
+            "abv": 4.81,
+            "review_overall": 3.647058823529412,
+            "review_count": 17,
+            "relevant": false
+          },
+          {
+            "beer_name": "London Lager (Liquid London)",
+            "beer_style": "Euro Pale Lager",
+            "abv": 4.5,
+            "review_overall": 3.4,
+            "review_count": 5,
+            "relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "hefeweizen-banana",
+      "query": "Suggest a cloudy wheat beer with banana and clove notes.",
+      "baseline": {
+        "id": "hefeweizen-banana",
+        "query": "Suggest a cloudy wheat beer with banana and clove notes.",
+        "relevant_results": 0,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg_at_k": 0.0,
+        "retrieved": [
+          {
+            "beer_name": "Green Tea Pale Ale",
+            "beer_style": "Herbed / Spiced Beer",
+            "abv": "",
+            "review_overall": 4.25,
+            "review_count": 2,
+            "relevant": false
+          },
+          {
+            "beer_name": "Twain's Moral Sense American Wheat",
+            "beer_style": "American Pale Wheat Ale",
+            "abv": 6.0,
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Andromeda Wheat",
+            "beer_style": "American Pale Wheat Ale",
+            "abv": "",
+            "review_overall": 3.333333333333333,
+            "review_count": 3,
+            "relevant": false
+          },
+          {
+            "beer_name": "Strawberry Wheat",
+            "beer_style": "Fruit / Vegetable Beer",
+            "abv": 4.7,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Sunfish Wheat",
+            "beer_style": "American Pale Wheat Ale",
+            "abv": "",
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": false
+          }
+        ]
+      },
+      "reranked": {
+        "id": "hefeweizen-banana",
+        "query": "Suggest a cloudy wheat beer with banana and clove notes.",
+        "relevant_results": 0,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg_at_k": 0.0,
+        "retrieved": [
+          {
+            "beer_name": "Samuel Adams Coastal Wheat",
+            "beer_style": "American Pale Wheat Ale",
+            "abv": 5.3,
+            "review_overall": 3.376842105263158,
+            "review_count": 475,
+            "relevant": false
+          },
+          {
+            "beer_name": "Green Tea Pale Ale",
+            "beer_style": "Herbed / Spiced Beer",
+            "abv": "",
+            "review_overall": 4.25,
+            "review_count": 2,
+            "relevant": false
+          },
+          {
+            "beer_name": "Andromeda Wheat",
+            "beer_style": "American Pale Wheat Ale",
+            "abv": "",
+            "review_overall": 3.333333333333333,
+            "review_count": 3,
+            "relevant": false
+          },
+          {
+            "beer_name": "Twain's Moral Sense American Wheat",
+            "beer_style": "American Pale Wheat Ale",
+            "abv": 6.0,
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "So Thank You Music Ginger Wheat",
+            "beer_style": "American Pale Wheat Ale",
+            "abv": "",
+            "review_overall": 4.055555555555555,
+            "review_count": 9,
+            "relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "witbier-citrus",
+      "query": "Recommend a Belgian wheat beer with citrus and coriander spice.",
+      "baseline": {
+        "id": "witbier-citrus",
+        "query": "Recommend a Belgian wheat beer with citrus and coriander spice.",
+        "relevant_results": 0,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg_at_k": 0.0,
+        "retrieved": [
+          {
+            "beer_name": "Cervoise De L'Avouerie D'Anthisnes",
+            "beer_style": "Belgian Pale Ale",
+            "abv": 5.0,
+            "review_overall": 2.875,
+            "review_count": 4,
+            "relevant": false
+          },
+          {
+            "beer_name": "Cuvée De L'alchimiste #14",
+            "beer_style": "American Pale Wheat Ale",
+            "abv": 5.0,
+            "review_overall": 3.75,
+            "review_count": 2,
+            "relevant": false
+          },
+          {
+            "beer_name": "Dernière Volonté Réserve Spéciale (Vieillie En Fût De Pinot Noir)",
+            "beer_style": "Belgian Strong Pale Ale",
+            "abv": 7.5,
+            "review_overall": 4.088235294117647,
+            "review_count": 17,
+            "relevant": false
+          },
+          {
+            "beer_name": "Dremmwel Rousse",
+            "beer_style": "Belgian Dark Ale",
+            "abv": 6.0,
+            "review_overall": 3.25,
+            "review_count": 2,
+            "relevant": false
+          },
+          {
+            "beer_name": "St Martin Cuvée De Noël",
+            "beer_style": "Belgian Strong Dark Ale",
+            "abv": 8.5,
+            "review_overall": 3.34375,
+            "review_count": 16,
+            "relevant": false
+          }
+        ]
+      },
+      "reranked": {
+        "id": "witbier-citrus",
+        "query": "Recommend a Belgian wheat beer with citrus and coriander spice.",
+        "relevant_results": 0,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg_at_k": 0.0,
+        "retrieved": [
+          {
+            "beer_name": "Dernière Volonté Réserve Spéciale (Vieillie En Fût De Pinot Noir)",
+            "beer_style": "Belgian Strong Pale Ale",
+            "abv": 7.5,
+            "review_overall": 4.088235294117647,
+            "review_count": 17,
+            "relevant": false
+          },
+          {
+            "beer_name": "La Moneuse Spéciale Noël",
+            "beer_style": "Belgian Strong Pale Ale",
+            "abv": 8.0,
+            "review_overall": 3.852941176470588,
+            "review_count": 85,
+            "relevant": false
+          },
+          {
+            "beer_name": "Bourgogne Des Flandres",
+            "beer_style": "Flanders Red Ale",
+            "abv": 5.0,
+            "review_overall": 3.4318181818181817,
+            "review_count": 66,
+            "relevant": false
+          },
+          {
+            "beer_name": "St Martin Cuvée De Noël",
+            "beer_style": "Belgian Strong Dark Ale",
+            "abv": 8.5,
+            "review_overall": 3.34375,
+            "review_count": 16,
+            "relevant": false
+          },
+          {
+            "beer_name": "Cervoise De L'Avouerie D'Anthisnes",
+            "beer_style": "Belgian Pale Ale",
+            "abv": 5.0,
+            "review_overall": 2.875,
+            "review_count": 4,
+            "relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "saison-dry",
+      "query": "Find a dry farmhouse saison with peppery, fruity yeast character.",
+      "baseline": {
+        "id": "saison-dry",
+        "query": "Find a dry farmhouse saison with peppery, fruity yeast character.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.0684931506849315,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Munjoie Saison",
+            "beer_style": "Saison / Farmhouse Ale",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 6,
+            "relevant": true
+          },
+          {
+            "beer_name": "Session Saison - Lacto",
+            "beer_style": "Saison / Farmhouse Ale",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Cambridge House Pink Peppercorn Saison",
+            "beer_style": "Saison / Farmhouse Ale",
+            "abv": 5.5,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Summer Solstice",
+            "beer_style": "Saison / Farmhouse Ale",
+            "abv": "",
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Saison De La Maison",
+            "beer_style": "Saison / Farmhouse Ale",
+            "abv": 6.4,
+            "review_overall": 3.75,
+            "review_count": 2,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "saison-dry",
+        "query": "Find a dry farmhouse saison with peppery, fruity yeast character.",
+        "relevant_results": 3,
+        "precision_at_k": 0.6,
+        "recall_at_k": 0.0410958904109589,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 0.3333333333333333,
+        "ndcg_at_k": 0.4468535299918563,
+        "retrieved": [
+          {
+            "beer_name": "Cantillon Saint Lamvinus",
+            "beer_style": "Lambic - Fruit",
+            "abv": 6.0,
+            "review_overall": 4.373278236914601,
+            "review_count": 363,
+            "relevant": false
+          },
+          {
+            "beer_name": "Cantillon Lou Pepe - Framboise",
+            "beer_style": "Lambic - Fruit",
+            "abv": 5.0,
+            "review_overall": 4.2,
+            "review_count": 170,
+            "relevant": false
+          },
+          {
+            "beer_name": "Munjoie Saison",
+            "beer_style": "Saison / Farmhouse Ale",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 6,
+            "relevant": true
+          },
+          {
+            "beer_name": "Tank 7 Farmhouse Ale",
+            "beer_style": "Saison / Farmhouse Ale",
+            "abv": 8.0,
+            "review_overall": 4.120481927710843,
+            "review_count": 415,
+            "relevant": true
+          },
+          {
+            "beer_name": "Brouwer's Imagination Series Saison 2008",
+            "beer_style": "Saison / Farmhouse Ale",
+            "abv": 6.5,
+            "review_overall": 4.021739130434782,
+            "review_count": 23,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "belgian-dubbel",
+      "query": "I am looking for a Belgian dubbel with dark fruit and toasted malt.",
+      "baseline": {
+        "id": "belgian-dubbel",
+        "query": "I am looking for a Belgian dubbel with dark fruit and toasted malt.",
+        "relevant_results": 4,
+        "precision_at_k": 0.8,
+        "recall_at_k": 0.06666666666666667,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.830419897363192,
+        "retrieved": [
+          {
+            "beer_name": "Cinnabar Belgian Dubble (with Cherries)",
+            "beer_style": "Dubbel",
+            "abv": 8.2,
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Dubbel",
+            "beer_style": "Dubbel",
+            "abv": 8.0,
+            "review_overall": 3.875,
+            "review_count": 4,
+            "relevant": true
+          },
+          {
+            "beer_name": "Dremmwel Rousse",
+            "beer_style": "Belgian Dark Ale",
+            "abv": 6.0,
+            "review_overall": 3.25,
+            "review_count": 2,
+            "relevant": false
+          },
+          {
+            "beer_name": "Trappist Dubbel",
+            "beer_style": "Dubbel",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Sint Gummarus Dubbel",
+            "beer_style": "Dubbel",
+            "abv": 7.0,
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "belgian-dubbel",
+        "query": "I am looking for a Belgian dubbel with dark fruit and toasted malt.",
+        "relevant_results": 1,
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.016666666666666666,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 0.25,
+        "ndcg_at_k": 0.14606834984270645,
+        "retrieved": [
+          {
+            "beer_name": "Oude Tart",
+            "beer_style": "Flanders Red Ale",
+            "abv": 7.5,
+            "review_overall": 4.261744966442953,
+            "review_count": 149,
+            "relevant": false
+          },
+          {
+            "beer_name": "La Binchoise Blonde Tradition",
+            "beer_style": "Belgian Pale Ale",
+            "abv": 6.5,
+            "review_overall": 4.0,
+            "review_count": 57,
+            "relevant": false
+          },
+          {
+            "beer_name": "Westmalle Trappist Extra",
+            "beer_style": "Belgian Pale Ale",
+            "abv": 4.8,
+            "review_overall": 4.107142857142857,
+            "review_count": 42,
+            "relevant": false
+          },
+          {
+            "beer_name": "Dominus Vobiscum Double",
+            "beer_style": "Dubbel",
+            "abv": 9.0,
+            "review_overall": 3.842105263157895,
+            "review_count": 57,
+            "relevant": true
+          },
+          {
+            "beer_name": "Dernière Volonté Réserve Spéciale (Vieillie En Fût De Pinot Noir)",
+            "beer_style": "Belgian Strong Pale Ale",
+            "abv": 7.5,
+            "review_overall": 4.088235294117647,
+            "review_count": 17,
+            "relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "belgian-tripel",
+      "query": "Recommend a golden Belgian tripel with spicy yeast and a warming finish.",
+      "baseline": {
+        "id": "belgian-tripel",
+        "query": "Recommend a golden Belgian tripel with spicy yeast and a warming finish.",
+        "relevant_results": 3,
+        "precision_at_k": 0.6,
+        "recall_at_k": 0.04477611940298507,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.639945385422766,
+        "retrieved": [
+          {
+            "beer_name": "Belgian Tripel",
+            "beer_style": "Tripel",
+            "abv": 9.1,
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Tournée Générale Tripel Hop",
+            "beer_style": "Belgian Strong Pale Ale",
+            "abv": 7.5,
+            "review_overall": 3.625,
+            "review_count": 4,
+            "relevant": false
+          },
+          {
+            "beer_name": "Belgian-Style Tripel",
+            "beer_style": "Tripel",
+            "abv": 8.0,
+            "review_overall": 3.659090909090909,
+            "review_count": 44,
+            "relevant": true
+          },
+          {
+            "beer_name": "Dernière Volonté Réserve Spéciale (Vieillie En Fût De Pinot Noir)",
+            "beer_style": "Belgian Strong Pale Ale",
+            "abv": 7.5,
+            "review_overall": 4.088235294117647,
+            "review_count": 17,
+            "relevant": false
+          },
+          {
+            "beer_name": "Gelders Tripel",
+            "beer_style": "Tripel",
+            "abv": 7.5,
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "belgian-tripel",
+        "query": "Recommend a golden Belgian tripel with spicy yeast and a warming finish.",
+        "relevant_results": 2,
+        "precision_at_k": 0.4,
+        "recall_at_k": 0.029850746268656716,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.5531464700081437,
+        "retrieved": [
+          {
+            "beer_name": "Belgian-Style Tripel",
+            "beer_style": "Tripel",
+            "abv": 8.0,
+            "review_overall": 3.659090909090909,
+            "review_count": 44,
+            "relevant": true
+          },
+          {
+            "beer_name": "Long Strange Tripel",
+            "beer_style": "Tripel",
+            "abv": 9.0,
+            "review_overall": 4.056224899598393,
+            "review_count": 249,
+            "relevant": true
+          },
+          {
+            "beer_name": "Panil Barriquée  (Italy Version)",
+            "beer_style": "Flanders Red Ale",
+            "abv": 8.0,
+            "review_overall": 4.209821428571429,
+            "review_count": 112,
+            "relevant": false
+          },
+          {
+            "beer_name": "Tournée Générale Tripel Hop",
+            "beer_style": "Belgian Strong Pale Ale",
+            "abv": 7.5,
+            "review_overall": 3.625,
+            "review_count": 4,
+            "relevant": false
+          },
+          {
+            "beer_name": "Kasteel Blond",
+            "beer_style": "Belgian Pale Ale",
+            "abv": 7.0,
+            "review_overall": 3.8766666666666665,
+            "review_count": 150,
+            "relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "belgian-quad",
+      "query": "Suggest a rich quadrupel with raisin, plum, and caramel notes.",
+      "baseline": {
+        "id": "belgian-quad",
+        "query": "Suggest a rich quadrupel with raisin, plum, and caramel notes.",
+        "relevant_results": 4,
+        "precision_at_k": 0.8,
+        "recall_at_k": 0.19047619047619047,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.830419897363192,
+        "retrieved": [
+          {
+            "beer_name": "Blackberry Quad",
+            "beer_style": "Quadrupel (Quad)",
+            "abv": 10.3,
+            "review_overall": 5.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Pannepot",
+            "beer_style": "Quadrupel (Quad)",
+            "abv": 10.0,
+            "review_overall": 4.1,
+            "review_count": 15,
+            "relevant": true
+          },
+          {
+            "beer_name": "Sancti Adalberti Miraculum Novum",
+            "beer_style": "Tripel",
+            "abv": 7.5,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Straffe Toeback",
+            "beer_style": "Quadrupel (Quad)",
+            "abv": 9.5,
+            "review_overall": 3.625,
+            "review_count": 8,
+            "relevant": true
+          },
+          {
+            "beer_name": "Brewers Reserve Belgian-Style Quad",
+            "beer_style": "Quadrupel (Quad)",
+            "abv": 11.0,
+            "review_overall": 2.642857142857143,
+            "review_count": 7,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "belgian-quad",
+        "query": "Suggest a rich quadrupel with raisin, plum, and caramel notes.",
+        "relevant_results": 3,
+        "precision_at_k": 0.6,
+        "recall_at_k": 0.14285714285714285,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg_at_k": 0.5147714448836774,
+        "retrieved": [
+          {
+            "beer_name": "Weizen Bam",
+            "beer_style": "Saison / Farmhouse Ale",
+            "abv": 4.5,
+            "review_overall": 4.17175572519084,
+            "review_count": 131,
+            "relevant": false
+          },
+          {
+            "beer_name": "Pannepot",
+            "beer_style": "Quadrupel (Quad)",
+            "abv": 10.0,
+            "review_overall": 4.1,
+            "review_count": 15,
+            "relevant": true
+          },
+          {
+            "beer_name": "Blackberry Quad",
+            "beer_style": "Quadrupel (Quad)",
+            "abv": 10.3,
+            "review_overall": 5.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Dominus Vobiscum Double",
+            "beer_style": "Dubbel",
+            "abv": 9.0,
+            "review_overall": 3.842105263157895,
+            "review_count": 57,
+            "relevant": false
+          },
+          {
+            "beer_name": "Smuttynose Gravitation (Big Beer Series)",
+            "beer_style": "Quadrupel (Quad)",
+            "abv": 12.0,
+            "review_overall": 3.525896414342629,
+            "review_count": 251,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "strong-bock",
+      "query": "I want a strong, malty bock with a smooth warming finish.",
+      "baseline": {
+        "id": "strong-bock",
+        "query": "I want a strong, malty bock with a smooth warming finish.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.03787878787878788,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Ironshore Bock",
+            "beer_style": "Bock",
+            "abv": 7.0,
+            "review_overall": 2.625,
+            "review_count": 4,
+            "relevant": true
+          },
+          {
+            "beer_name": "Winter Bockle",
+            "beer_style": "Bock",
+            "abv": 7.5,
+            "review_overall": 3.25,
+            "review_count": 2,
+            "relevant": true
+          },
+          {
+            "beer_name": "Filisko's Bock",
+            "beer_style": "Maibock / Helles Bock",
+            "abv": 6.2,
+            "review_overall": 4.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Boss Kozlak (Bock)",
+            "beer_style": "Bock",
+            "abv": 6.0,
+            "review_overall": 3.5,
+            "review_count": 17,
+            "relevant": true
+          },
+          {
+            "beer_name": "Special Edition - Bock Beer",
+            "beer_style": "Bock",
+            "abv": 7.0,
+            "review_overall": 3.739130434782609,
+            "review_count": 115,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "strong-bock",
+        "query": "I want a strong, malty bock with a smooth warming finish.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.03787878787878788,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Sierra Nevada Glissade Golden Bock",
+            "beer_style": "Maibock / Helles Bock",
+            "abv": 6.4,
+            "review_overall": 3.8172966781214206,
+            "review_count": 873,
+            "relevant": true
+          },
+          {
+            "beer_name": "Special Edition - Bock Beer",
+            "beer_style": "Bock",
+            "abv": 7.0,
+            "review_overall": 3.739130434782609,
+            "review_count": 115,
+            "relevant": true
+          },
+          {
+            "beer_name": "Snowstorm 2008",
+            "beer_style": "Bock",
+            "abv": 6.0,
+            "review_overall": 4.241071428571429,
+            "review_count": 56,
+            "relevant": true
+          },
+          {
+            "beer_name": "Boss Kozlak (Bock)",
+            "beer_style": "Bock",
+            "abv": 6.0,
+            "review_overall": 3.5,
+            "review_count": 17,
+            "relevant": true
+          },
+          {
+            "beer_name": "Ironshore Bock",
+            "beer_style": "Bock",
+            "abv": 7.0,
+            "review_overall": 2.625,
+            "review_count": 4,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "barleywine-sipper",
+      "query": "Recommend a high-strength barleywine to sip slowly, with rich malt sweetness.",
+      "baseline": {
+        "id": "barleywine-sipper",
+        "query": "Recommend a high-strength barleywine to sip slowly, with rich malt sweetness.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.045454545454545456,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "S:t Eriks Barley Wine God Jul",
+            "beer_style": "English Barleywine",
+            "abv": 8.5,
+            "review_overall": 3.333333333333333,
+            "review_count": 3,
+            "relevant": true
+          },
+          {
+            "beer_name": "'Bout Time Barley Wine",
+            "beer_style": "American Barleywine",
+            "abv": "",
+            "review_overall": 3.0,
+            "review_count": 5,
+            "relevant": true
+          },
+          {
+            "beer_name": "Cloudsplitter Barley Wine",
+            "beer_style": "English Barleywine",
+            "abv": 9.5,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Barley Wine",
+            "beer_style": "English Barleywine",
+            "abv": "",
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Barleywine",
+            "beer_style": "American Barleywine",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "barleywine-sipper",
+        "query": "Recommend a high-strength barleywine to sip slowly, with rich malt sweetness.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.045454545454545456,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Stone Old Guardian Barley Wine Style Ale 2010",
+            "beer_style": "American Barleywine",
+            "abv": 11.1,
+            "review_overall": 4.030769230769231,
+            "review_count": 195,
+            "relevant": true
+          },
+          {
+            "beer_name": "Super Chicken Barley Wine",
+            "beer_style": "American Barleywine",
+            "abv": 11.0,
+            "review_overall": 3.852941176470588,
+            "review_count": 34,
+            "relevant": true
+          },
+          {
+            "beer_name": "Chicken Killer Barley Wine",
+            "beer_style": "American Barleywine",
+            "abv": 10.0,
+            "review_overall": 3.5444444444444443,
+            "review_count": 135,
+            "relevant": true
+          },
+          {
+            "beer_name": "Old Tree Hugger Barleywine",
+            "beer_style": "American Barleywine",
+            "abv": 11.5,
+            "review_overall": 4.285714285714286,
+            "review_count": 21,
+            "relevant": true
+          },
+          {
+            "beer_name": "Stone Old Guardian Barley Wine Style Ale 2000",
+            "beer_style": "American Barleywine",
+            "abv": 9.44,
+            "review_overall": 4.285714285714286,
+            "review_count": 7,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "scotch-ale-malt",
+      "query": "Find a full-bodied Scotch ale with caramel malt and a warming character.",
+      "baseline": {
+        "id": "scotch-ale-malt",
+        "query": "Find a full-bodied Scotch ale with caramel malt and a warming character.",
+        "relevant_results": 4,
+        "precision_at_k": 0.8,
+        "recall_at_k": 0.08888888888888889,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.7860137352654724,
+        "retrieved": [
+          {
+            "beer_name": "Peach Brandy Scotch Ale",
+            "beer_style": "Scotch Ale / Wee Heavy",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Scotch C.T.S. (Crowned Trees Scotch)",
+            "beer_style": "Scottish Ale",
+            "abv": 7.2,
+            "review_overall": 2.6666666666666665,
+            "review_count": 3,
+            "relevant": false
+          },
+          {
+            "beer_name": "Scotch Ale",
+            "beer_style": "Scotch Ale / Wee Heavy",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Christmas Ale",
+            "beer_style": "Scotch Ale / Wee Heavy",
+            "abv": 8.5,
+            "review_overall": 2.5,
+            "review_count": 3,
+            "relevant": true
+          },
+          {
+            "beer_name": "Scotch Ale",
+            "beer_style": "Scotch Ale / Wee Heavy",
+            "abv": 5.0,
+            "review_overall": 3.5,
+            "review_count": 4,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "scotch-ale-malt",
+        "query": "Find a full-bodied Scotch ale with caramel malt and a warming character.",
+        "relevant_results": 4,
+        "precision_at_k": 0.8,
+        "recall_at_k": 0.08888888888888889,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.8539316501572937,
+        "retrieved": [
+          {
+            "beer_name": "Pike Kilt Lifter Scotch Style Ale",
+            "beer_style": "Scotch Ale / Wee Heavy",
+            "abv": 6.5,
+            "review_overall": 3.664893617021277,
+            "review_count": 188,
+            "relevant": true
+          },
+          {
+            "beer_name": "Macfarlanes Scotch Ale",
+            "beer_style": "Scotch Ale / Wee Heavy",
+            "abv": 6.8,
+            "review_overall": 3.9,
+            "review_count": 10,
+            "relevant": true
+          },
+          {
+            "beer_name": "Peach Brandy Scotch Ale",
+            "beer_style": "Scotch Ale / Wee Heavy",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Scotch C.T.S. (Crowned Trees Scotch)",
+            "beer_style": "Scottish Ale",
+            "abv": 7.2,
+            "review_overall": 2.6666666666666665,
+            "review_count": 3,
+            "relevant": false
+          },
+          {
+            "beer_name": "Scotch Ale",
+            "beer_style": "Scotch Ale / Wee Heavy",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "english-bitter-session",
+      "query": "I would like a balanced, sessionable English bitter with modest alcohol.",
+      "baseline": {
+        "id": "english-bitter-session",
+        "query": "I would like a balanced, sessionable English bitter with modest alcohol.",
+        "relevant_results": 3,
+        "precision_at_k": 0.6,
+        "recall_at_k": 0.015706806282722512,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.6164336326286644,
+        "retrieved": [
+          {
+            "beer_name": "Shakespeare Special Bitter",
+            "beer_style": "English Bitter",
+            "abv": 3.4,
+            "review_overall": 4.5,
+            "review_count": 2,
+            "relevant": true
+          },
+          {
+            "beer_name": "Tranquility",
+            "beer_style": "English India Pale Ale (IPA)",
+            "abv": 6.5,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Dry Hopped English Mild",
+            "beer_style": "English Dark Mild Ale",
+            "abv": 4.4,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Session Ale #12: Best Bitter",
+            "beer_style": "English Bitter",
+            "abv": 3.8,
+            "review_overall": 4.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Twist Of Fate Bitter Ale",
+            "beer_style": "Extra Special / Strong Bitter (ESB)",
+            "abv": 5.6,
+            "review_overall": 4.09375,
+            "review_count": 48,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "english-bitter-session",
+        "query": "I would like a balanced, sessionable English bitter with modest alcohol.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.02617801047120419,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Twist Of Fate Bitter Ale",
+            "beer_style": "Extra Special / Strong Bitter (ESB)",
+            "abv": 5.6,
+            "review_overall": 4.09375,
+            "review_count": 48,
+            "relevant": true
+          },
+          {
+            "beer_name": "Shakespeare Special Bitter",
+            "beer_style": "English Bitter",
+            "abv": 3.4,
+            "review_overall": 4.5,
+            "review_count": 2,
+            "relevant": true
+          },
+          {
+            "beer_name": "Best Bitter",
+            "beer_style": "English Bitter",
+            "abv": 4.0,
+            "review_overall": 4.5,
+            "review_count": 5,
+            "relevant": true
+          },
+          {
+            "beer_name": "Sussex Best Bitter",
+            "beer_style": "English Bitter",
+            "abv": 4.0,
+            "review_overall": 4.2,
+            "review_count": 10,
+            "relevant": true
+          },
+          {
+            "beer_name": "Yorkshire Pub Ale",
+            "beer_style": "English Bitter",
+            "abv": 4.2,
+            "review_overall": 4.7,
+            "review_count": 5,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "blonde-easy",
+      "query": "Recommend an easy-drinking blonde ale with a soft malt profile.",
+      "baseline": {
+        "id": "blonde-easy",
+        "query": "Recommend an easy-drinking blonde ale with a soft malt profile.",
+        "relevant_results": 4,
+        "precision_at_k": 0.8,
+        "recall_at_k": 0.020942408376963352,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.8539316501572937,
+        "retrieved": [
+          {
+            "beer_name": "Russell Honey Blonde Ale",
+            "beer_style": "American Blonde Ale",
+            "abv": 4.7,
+            "review_overall": 3.5,
+            "review_count": 2,
+            "relevant": true
+          },
+          {
+            "beer_name": "Tall Plum Blonde Ale",
+            "beer_style": "American Blonde Ale",
+            "abv": "",
+            "review_overall": 4.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Honey Blonde Ale",
+            "beer_style": "American Blonde Ale",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 3,
+            "relevant": true
+          },
+          {
+            "beer_name": "Single Malt Ale",
+            "beer_style": "English Bitter",
+            "abv": 4.5,
+            "review_overall": 3.25,
+            "review_count": 2,
+            "relevant": false
+          },
+          {
+            "beer_name": "Chatoe Rogue First Growth Single Malt Ale",
+            "beer_style": "American Blonde Ale",
+            "abv": 5.3,
+            "review_overall": 3.801652892561984,
+            "review_count": 121,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "blonde-easy",
+        "query": "Recommend an easy-drinking blonde ale with a soft malt profile.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.02617801047120419,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Chatoe Rogue First Growth Single Malt Ale",
+            "beer_style": "American Blonde Ale",
+            "abv": 5.3,
+            "review_overall": 3.801652892561984,
+            "review_count": 121,
+            "relevant": true
+          },
+          {
+            "beer_name": "Pick Axe Blonde Ale",
+            "beer_style": "American Blonde Ale",
+            "abv": "",
+            "review_overall": 3.644444444444445,
+            "review_count": 45,
+            "relevant": true
+          },
+          {
+            "beer_name": "Aud Blonde",
+            "beer_style": "American Blonde Ale",
+            "abv": 4.5,
+            "review_overall": 4.1477272727272725,
+            "review_count": 44,
+            "relevant": true
+          },
+          {
+            "beer_name": "Ostalgia Blonde",
+            "beer_style": "Belgian Pale Ale",
+            "abv": 5.0,
+            "review_overall": 4.233333333333333,
+            "review_count": 15,
+            "relevant": true
+          },
+          {
+            "beer_name": "Russell Honey Blonde Ale",
+            "beer_style": "American Blonde Ale",
+            "abv": 4.7,
+            "review_overall": 3.5,
+            "review_count": 2,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "cream-ale-clean",
+      "query": "Suggest a smooth, clean cream ale that is light and refreshing.",
+      "baseline": {
+        "id": "cream-ale-clean",
+        "query": "Suggest a smooth, clean cream ale that is light and refreshing.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.18518518518518517,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Clearwater Cream Ale",
+            "beer_style": "Cream Ale",
+            "abv": "",
+            "review_overall": 4.5,
+            "review_count": 2,
+            "relevant": true
+          },
+          {
+            "beer_name": "Cream Ale",
+            "beer_style": "Cream Ale",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Orange Cream Ale",
+            "beer_style": "Cream Ale",
+            "abv": 5.5,
+            "review_overall": 3.0,
+            "review_count": 3,
+            "relevant": true
+          },
+          {
+            "beer_name": "Cream Ale",
+            "beer_style": "Cream Ale",
+            "abv": 5.2,
+            "review_overall": 3.8,
+            "review_count": 10,
+            "relevant": true
+          },
+          {
+            "beer_name": "Cream Ale",
+            "beer_style": "Cream Ale",
+            "abv": 4.0,
+            "review_overall": 3.466666666666667,
+            "review_count": 15,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "cream-ale-clean",
+        "query": "Suggest a smooth, clean cream ale that is light and refreshing.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.18518518518518517,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Cream Ale",
+            "beer_style": "Cream Ale",
+            "abv": 5.2,
+            "review_overall": 3.8,
+            "review_count": 10,
+            "relevant": true
+          },
+          {
+            "beer_name": "Cream Ale",
+            "beer_style": "Cream Ale",
+            "abv": 4.0,
+            "review_overall": 3.466666666666667,
+            "review_count": 15,
+            "relevant": true
+          },
+          {
+            "beer_name": "Clearwater Cream Ale",
+            "beer_style": "Cream Ale",
+            "abv": "",
+            "review_overall": 4.5,
+            "review_count": 2,
+            "relevant": true
+          },
+          {
+            "beer_name": "Oliver's Manchester Cream Ale",
+            "beer_style": "Cream Ale",
+            "abv": 6.0,
+            "review_overall": 4.0,
+            "review_count": 10,
+            "relevant": true
+          },
+          {
+            "beer_name": "Orange Cream Ale",
+            "beer_style": "Cream Ale",
+            "abv": 5.5,
+            "review_overall": 3.0,
+            "review_count": 3,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "kolsch-crisp",
+      "query": "Find a crisp, delicate Kölsch with a subtle fruity note.",
+      "baseline": {
+        "id": "kolsch-crisp",
+        "query": "Find a crisp, delicate Kölsch with a subtle fruity note.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.08333333333333333,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Conversion Kolsch",
+            "beer_style": "Kölsch",
+            "abv": "",
+            "review_overall": 4.333333333333333,
+            "review_count": 6,
+            "relevant": true
+          },
+          {
+            "beer_name": "Bug Dope Kolsch",
+            "beer_style": "Kölsch",
+            "abv": 4.5,
+            "review_overall": 4.7,
+            "review_count": 5,
+            "relevant": true
+          },
+          {
+            "beer_name": "Kolsch",
+            "beer_style": "Kölsch",
+            "abv": "",
+            "review_overall": 4.166666666666667,
+            "review_count": 3,
+            "relevant": true
+          },
+          {
+            "beer_name": "Kölsch",
+            "beer_style": "Kölsch",
+            "abv": 5.0,
+            "review_overall": 4.0,
+            "review_count": 2,
+            "relevant": true
+          },
+          {
+            "beer_name": "McNeill's Kölsch",
+            "beer_style": "Kölsch",
+            "abv": 5.2,
+            "review_overall": 4.038461538461538,
+            "review_count": 13,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "kolsch-crisp",
+        "query": "Find a crisp, delicate Kölsch with a subtle fruity note.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.08333333333333333,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Mühlen Kölsch",
+            "beer_style": "Kölsch",
+            "abv": 4.8,
+            "review_overall": 4.526315789473684,
+            "review_count": 19,
+            "relevant": true
+          },
+          {
+            "beer_name": "Conversion Kolsch",
+            "beer_style": "Kölsch",
+            "abv": "",
+            "review_overall": 4.333333333333333,
+            "review_count": 6,
+            "relevant": true
+          },
+          {
+            "beer_name": "Bug Dope Kolsch",
+            "beer_style": "Kölsch",
+            "abv": 4.5,
+            "review_overall": 4.7,
+            "review_count": 5,
+            "relevant": true
+          },
+          {
+            "beer_name": "McNeill's Kölsch",
+            "beer_style": "Kölsch",
+            "abv": 5.2,
+            "review_overall": 4.038461538461538,
+            "review_count": 13,
+            "relevant": true
+          },
+          {
+            "beer_name": "Kölsch",
+            "beer_style": "Kölsch",
+            "abv": "",
+            "review_overall": 3.846938775510204,
+            "review_count": 49,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "dunkelweizen-dark-wheat",
+      "query": "I want a dark wheat beer with bread crust, banana, and clove notes.",
+      "baseline": {
+        "id": "dunkelweizen-dark-wheat",
+        "query": "I want a dark wheat beer with bread crust, banana, and clove notes.",
+        "relevant_results": 0,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg_at_k": 0.0,
+        "retrieved": [
+          {
+            "beer_name": "Sunfish Wheat",
+            "beer_style": "American Pale Wheat Ale",
+            "abv": "",
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Single Batch Series - Dark Wheat Project",
+            "beer_style": "American Dark Wheat Ale",
+            "abv": 7.5,
+            "review_overall": 3.84375,
+            "review_count": 16,
+            "relevant": false
+          },
+          {
+            "beer_name": "Twain's Moral Sense American Wheat",
+            "beer_style": "American Pale Wheat Ale",
+            "abv": 6.0,
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Harvest Moon Wheat",
+            "beer_style": "American Pale Wheat Ale",
+            "abv": 3.5,
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Abbey Honey Wheat",
+            "beer_style": "Hefeweizen",
+            "abv": 5.57,
+            "review_overall": 5.0,
+            "review_count": 1,
+            "relevant": false
+          }
+        ]
+      },
+      "reranked": {
+        "id": "dunkelweizen-dark-wheat",
+        "query": "I want a dark wheat beer with bread crust, banana, and clove notes.",
+        "relevant_results": 0,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg_at_k": 0.0,
+        "retrieved": [
+          {
+            "beer_name": "Brewer Patriot Collection - James Madison Dark Wheat Ale",
+            "beer_style": "American Dark Wheat Ale",
+            "abv": "",
+            "review_overall": 3.655367231638418,
+            "review_count": 177,
+            "relevant": false
+          },
+          {
+            "beer_name": "Single Batch Series - Dark Wheat Project",
+            "beer_style": "American Dark Wheat Ale",
+            "abv": 7.5,
+            "review_overall": 3.84375,
+            "review_count": 16,
+            "relevant": false
+          },
+          {
+            "beer_name": "Samuel Adams Coastal Wheat",
+            "beer_style": "American Pale Wheat Ale",
+            "abv": 5.3,
+            "review_overall": 3.376842105263158,
+            "review_count": 475,
+            "relevant": false
+          },
+          {
+            "beer_name": "Sunfish Wheat",
+            "beer_style": "American Pale Wheat Ale",
+            "abv": "",
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Serengeti Wheat",
+            "beer_style": "American Pale Wheat Ale",
+            "abv": 4.7,
+            "review_overall": 3.7,
+            "review_count": 5,
+            "relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "schwarzbier-roasty",
+      "query": "Recommend a dark lager with gentle roast and a clean lager finish.",
+      "baseline": {
+        "id": "schwarzbier-roasty",
+        "query": "Recommend a dark lager with gentle roast and a clean lager finish.",
+        "relevant_results": 0,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg_at_k": 0.0,
+        "retrieved": [
+          {
+            "beer_name": "Thunder Bay Lager",
+            "beer_style": "American Adjunct Lager",
+            "abv": 5.0,
+            "review_overall": 2.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Henry Weinhard's Classic Dark Lager",
+            "beer_style": "Munich Dunkel Lager",
+            "abv": 4.81,
+            "review_overall": 3.647058823529412,
+            "review_count": 17,
+            "relevant": false
+          },
+          {
+            "beer_name": "Christmas Stark Lager",
+            "beer_style": "Märzen / Oktoberfest",
+            "abv": 5.7,
+            "review_overall": 5.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Oaked Loyalist Lager",
+            "beer_style": "Euro Pale Lager",
+            "abv": 4.5,
+            "review_overall": 2.5,
+            "review_count": 3,
+            "relevant": false
+          },
+          {
+            "beer_name": "Vienna Lager",
+            "beer_style": "Vienna Lager",
+            "abv": 6.6,
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": false
+          }
+        ]
+      },
+      "reranked": {
+        "id": "schwarzbier-roasty",
+        "query": "Recommend a dark lager with gentle roast and a clean lager finish.",
+        "relevant_results": 0,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg_at_k": 0.0,
+        "retrieved": [
+          {
+            "beer_name": "Henry Weinhard's Classic Dark Lager",
+            "beer_style": "Munich Dunkel Lager",
+            "abv": 4.81,
+            "review_overall": 3.647058823529412,
+            "review_count": 17,
+            "relevant": false
+          },
+          {
+            "beer_name": "Southampton Golden Lager",
+            "beer_style": "Munich Helles Lager",
+            "abv": 4.5,
+            "review_overall": 3.863636363636364,
+            "review_count": 11,
+            "relevant": false
+          },
+          {
+            "beer_name": "Christmas Stark Lager",
+            "beer_style": "Märzen / Oktoberfest",
+            "abv": 5.7,
+            "review_overall": 5.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Young Allen's Lager",
+            "beer_style": "Vienna Lager",
+            "abv": 5.68,
+            "review_overall": 3.75,
+            "review_count": 8,
+            "relevant": false
+          },
+          {
+            "beer_name": "Lester Young Porkpie Hat Dark Lager",
+            "beer_style": "Munich Dunkel Lager",
+            "abv": 5.7,
+            "review_overall": 4.125,
+            "review_count": 4,
+            "relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "irish-red",
+      "query": "Suggest an Irish red ale with toasted malt and a balanced finish.",
+      "baseline": {
+        "id": "irish-red",
+        "query": "Suggest an Irish red ale with toasted malt and a balanced finish.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.1282051282051282,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Red Branch Irish Red Ale",
+            "beer_style": "Irish Red Ale",
+            "abv": 5.1,
+            "review_overall": 3.875,
+            "review_count": 4,
+            "relevant": true
+          },
+          {
+            "beer_name": "Kilkenny Irish Cream Ale",
+            "beer_style": "Irish Red Ale",
+            "abv": 4.3,
+            "review_overall": 3.633333333333333,
+            "review_count": 105,
+            "relevant": true
+          },
+          {
+            "beer_name": "Red Head Irish Ale",
+            "beer_style": "Irish Red Ale",
+            "abv": 5.5,
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Celtic Red Ale",
+            "beer_style": "Irish Red Ale",
+            "abv": 5.3,
+            "review_overall": 3.35,
+            "review_count": 10,
+            "relevant": true
+          },
+          {
+            "beer_name": "Celtic Cross Red Ale",
+            "beer_style": "Irish Red Ale",
+            "abv": "",
+            "review_overall": 3.75,
+            "review_count": 2,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "irish-red",
+        "query": "Suggest an Irish red ale with toasted malt and a balanced finish.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.1282051282051282,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Kilkenny Irish Cream Ale",
+            "beer_style": "Irish Red Ale",
+            "abv": 4.3,
+            "review_overall": 3.633333333333333,
+            "review_count": 105,
+            "relevant": true
+          },
+          {
+            "beer_name": "Irish Ale",
+            "beer_style": "Irish Red Ale",
+            "abv": 5.8,
+            "review_overall": 3.997448979591837,
+            "review_count": 196,
+            "relevant": true
+          },
+          {
+            "beer_name": "Red Branch Irish Red Ale",
+            "beer_style": "Irish Red Ale",
+            "abv": 5.1,
+            "review_overall": 3.875,
+            "review_count": 4,
+            "relevant": true
+          },
+          {
+            "beer_name": "Seamus' Irish Red Ale",
+            "beer_style": "Irish Red Ale",
+            "abv": 5.6,
+            "review_overall": 3.8461538461538463,
+            "review_count": 13,
+            "relevant": true
+          },
+          {
+            "beer_name": "Celtic Red Ale",
+            "beer_style": "Irish Red Ale",
+            "abv": 5.3,
+            "review_overall": 3.35,
+            "review_count": 10,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "belgian-dark-ale",
+      "query": "I am looking for a Belgian dark ale with fruity yeast character.",
+      "baseline": {
+        "id": "belgian-dark-ale",
+        "query": "I am looking for a Belgian dark ale with fruity yeast character.",
+        "relevant_results": 1,
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.02702702702702703,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 0.2,
+        "ndcg_at_k": 0.13120507751234178,
+        "retrieved": [
+          {
+            "beer_name": "C2 Smoked Belgian Dark Ale",
+            "beer_style": "Belgian Strong Dark Ale",
+            "abv": 10.7,
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Belgian Old Ale",
+            "beer_style": "Belgian Strong Pale Ale",
+            "abv": 7.1,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Serafijn Belgian Pale Ale",
+            "beer_style": "Belgian Pale Ale",
+            "abv": 6.2,
+            "review_overall": 4.227272727272728,
+            "review_count": 11,
+            "relevant": false
+          },
+          {
+            "beer_name": "Baird Belgian Summer Ale",
+            "beer_style": "Belgian Pale Ale",
+            "abv": 5.1,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Yagan Dark Ale",
+            "beer_style": "Belgian Dark Ale",
+            "abv": 5.0,
+            "review_overall": 3.1666666666666665,
+            "review_count": 3,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "belgian-dark-ale",
+        "query": "I am looking for a Belgian dark ale with fruity yeast character.",
+        "relevant_results": 0,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg_at_k": 0.0,
+        "retrieved": [
+          {
+            "beer_name": "De Proef Flemish Primitive Wild Ale (Pig Nun)",
+            "beer_style": "Belgian Strong Pale Ale",
+            "abv": 9.0,
+            "review_overall": 4.105263157894737,
+            "review_count": 76,
+            "relevant": false
+          },
+          {
+            "beer_name": "Kasteel Blond",
+            "beer_style": "Belgian Pale Ale",
+            "abv": 7.0,
+            "review_overall": 3.8766666666666665,
+            "review_count": 150,
+            "relevant": false
+          },
+          {
+            "beer_name": "Serafijn Belgian Pale Ale",
+            "beer_style": "Belgian Pale Ale",
+            "abv": 6.2,
+            "review_overall": 4.227272727272728,
+            "review_count": 11,
+            "relevant": false
+          },
+          {
+            "beer_name": "Sloeber",
+            "beer_style": "Belgian Strong Pale Ale",
+            "abv": 7.5,
+            "review_overall": 3.844262295081968,
+            "review_count": 61,
+            "relevant": false
+          },
+          {
+            "beer_name": "Saranac Belgian Ale",
+            "beer_style": "Belgian Pale Ale",
+            "abv": 5.9,
+            "review_overall": 3.3678861788617884,
+            "review_count": 246,
+            "relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "belgian-ipa",
+      "query": "Recommend a Belgian IPA that combines hop bitterness and Belgian yeast fruitiness.",
+      "baseline": {
+        "id": "belgian-ipa",
+        "query": "Recommend a Belgian IPA that combines hop bitterness and Belgian yeast fruitiness.",
+        "relevant_results": 1,
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.04,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.3391602052736161,
+        "retrieved": [
+          {
+            "beer_name": "Hop De Mensenge",
+            "beer_style": "Belgian IPA",
+            "abv": "",
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "HopHannia IPA",
+            "beer_style": "American IPA",
+            "abv": 5.7,
+            "review_overall": 2.5,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Hopshackle Special No. 001 Bitter",
+            "beer_style": "English Bitter",
+            "abv": 5.2,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Hop Knot IPA",
+            "beer_style": "American IPA",
+            "abv": 6.7,
+            "review_overall": 3.7,
+            "review_count": 5,
+            "relevant": false
+          },
+          {
+            "beer_name": "Gulden Fraug Belgian Style Ale",
+            "beer_style": "Belgian Strong Pale Ale",
+            "abv": 10.5,
+            "review_overall": 3.36,
+            "review_count": 50,
+            "relevant": false
+          }
+        ]
+      },
+      "reranked": {
+        "id": "belgian-ipa",
+        "query": "Recommend a Belgian IPA that combines hop bitterness and Belgian yeast fruitiness.",
+        "relevant_results": 1,
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.04,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg_at_k": 0.21398626473452756,
+        "retrieved": [
+          {
+            "beer_name": "Hop Henge Experimental IPA",
+            "beer_style": "American Double / Imperial IPA",
+            "abv": 9.0,
+            "review_overall": 4.053321678321678,
+            "review_count": 572,
+            "relevant": false
+          },
+          {
+            "beer_name": "Gouden Carolus Hopsinjoor",
+            "beer_style": "Belgian IPA",
+            "abv": 8.0,
+            "review_overall": 4.032871972318339,
+            "review_count": 289,
+            "relevant": true
+          },
+          {
+            "beer_name": "Big Hop IPA",
+            "beer_style": "American IPA",
+            "abv": 5.8,
+            "review_overall": 4.1,
+            "review_count": 80,
+            "relevant": false
+          },
+          {
+            "beer_name": "HopShock IPA",
+            "beer_style": "American IPA",
+            "abv": 7.1,
+            "review_overall": 3.8372093023255816,
+            "review_count": 43,
+            "relevant": false
+          },
+          {
+            "beer_name": "Hophead Imperial IPA",
+            "beer_style": "American Double / Imperial IPA",
+            "abv": 9.2,
+            "review_overall": 4.25,
+            "review_count": 28,
+            "relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "black-ale",
+      "query": "Find a dark, hoppy black ale with roasted malt and citrus hops.",
+      "baseline": {
+        "id": "black-ale",
+        "query": "Find a dark, hoppy black ale with roasted malt and citrus hops.",
+        "relevant_results": 1,
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.03225806451612903,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 0.25,
+        "ndcg_at_k": 0.14606834984270645,
+        "retrieved": [
+          {
+            "beer_name": "Frog Hop Fresh Hopped Pale Ale",
+            "beer_style": "American Pale Ale (APA)",
+            "abv": 5.0,
+            "review_overall": 3.375,
+            "review_count": 4,
+            "relevant": false
+          },
+          {
+            "beer_name": "Black Sunshine",
+            "beer_style": "Oatmeal Stout",
+            "abv": 4.8,
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "C2 Smoked Belgian Dark Ale",
+            "beer_style": "Belgian Strong Dark Ale",
+            "abv": 10.7,
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Hop In The Dark Cascadian Dark Ale",
+            "beer_style": "American Black Ale",
+            "abv": 6.9,
+            "review_overall": 4.033415841584159,
+            "review_count": 404,
+            "relevant": true
+          },
+          {
+            "beer_name": "Blackbird Stout",
+            "beer_style": "Oatmeal Stout",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 2,
+            "relevant": false
+          }
+        ]
+      },
+      "reranked": {
+        "id": "black-ale",
+        "query": "Find a dark, hoppy black ale with roasted malt and citrus hops.",
+        "relevant_results": 2,
+        "precision_at_k": 0.4,
+        "recall_at_k": 0.06451612903225806,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.5087403079104241,
+        "retrieved": [
+          {
+            "beer_name": "Hop In The Dark Cascadian Dark Ale",
+            "beer_style": "American Black Ale",
+            "abv": 6.9,
+            "review_overall": 4.033415841584159,
+            "review_count": 404,
+            "relevant": true
+          },
+          {
+            "beer_name": "Chatoe Rogue First Growth Single Malt Ale",
+            "beer_style": "American Blonde Ale",
+            "abv": 5.3,
+            "review_overall": 3.801652892561984,
+            "review_count": 121,
+            "relevant": false
+          },
+          {
+            "beer_name": "Black Hops Beer",
+            "beer_style": "American Black Ale",
+            "abv": 6.75,
+            "review_overall": 3.6630434782608696,
+            "review_count": 46,
+            "relevant": true
+          },
+          {
+            "beer_name": "Frog Hop Fresh Hopped Pale Ale",
+            "beer_style": "American Pale Ale (APA)",
+            "abv": 5.0,
+            "review_overall": 3.375,
+            "review_count": 4,
+            "relevant": false
+          },
+          {
+            "beer_name": "Total Eclipse Black Ale",
+            "beer_style": "American Stout",
+            "abv": 5.6,
+            "review_overall": 3.4339622641509435,
+            "review_count": 53,
+            "relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "sweet-milk-stout",
+      "query": "I want a sweet, creamy stout with milk chocolate notes.",
+      "baseline": {
+        "id": "sweet-milk-stout",
+        "query": "I want a sweet, creamy stout with milk chocolate notes.",
+        "relevant_results": 2,
+        "precision_at_k": 0.4,
+        "recall_at_k": 0.06451612903225806,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.48522855511632257,
+        "retrieved": [
+          {
+            "beer_name": "Milk Chocolate Stout",
+            "beer_style": "Milk / Sweet Stout",
+            "abv": "",
+            "review_overall": 3.5,
+            "review_count": 4,
+            "relevant": true
+          },
+          {
+            "beer_name": "Morrisons Chocolate And Vanilla Stout",
+            "beer_style": "English Stout",
+            "abv": 4.5,
+            "review_overall": 4.5,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Chocolate Cherry Stout",
+            "beer_style": "American Stout",
+            "abv": 5.3,
+            "review_overall": 4.5,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Milk Stout",
+            "beer_style": "Milk / Sweet Stout",
+            "abv": "",
+            "review_overall": 3.071428571428572,
+            "review_count": 7,
+            "relevant": true
+          },
+          {
+            "beer_name": "New South Chocolate Stout",
+            "beer_style": "American Stout",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": false
+          }
+        ]
+      },
+      "reranked": {
+        "id": "sweet-milk-stout",
+        "query": "I want a sweet, creamy stout with milk chocolate notes.",
+        "relevant_results": 2,
+        "precision_at_k": 0.4,
+        "recall_at_k": 0.06451612903225806,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.4703652827859579,
+        "retrieved": [
+          {
+            "beer_name": "Milk Chocolate Stout",
+            "beer_style": "Milk / Sweet Stout",
+            "abv": "",
+            "review_overall": 3.5,
+            "review_count": 4,
+            "relevant": true
+          },
+          {
+            "beer_name": "Choklat",
+            "beer_style": "American Double / Imperial Stout",
+            "abv": 11.0,
+            "review_overall": 4.06093489148581,
+            "review_count": 1198,
+            "relevant": false
+          },
+          {
+            "beer_name": "Chocolate Indulgence Stout",
+            "beer_style": "Belgian Dark Ale",
+            "abv": 7.0,
+            "review_overall": 3.7813455657492354,
+            "review_count": 654,
+            "relevant": false
+          },
+          {
+            "beer_name": "Morrisons Chocolate And Vanilla Stout",
+            "beer_style": "English Stout",
+            "abv": 4.5,
+            "review_overall": 4.5,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Sled Dog Milk Stout",
+            "beer_style": "Milk / Sweet Stout",
+            "abv": "",
+            "review_overall": 4.4,
+            "review_count": 5,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "oatmeal-stout",
+      "query": "Recommend a smooth oatmeal stout with a creamy body and roasted flavor.",
+      "baseline": {
+        "id": "oatmeal-stout",
+        "query": "Recommend a smooth oatmeal stout with a creamy body and roasted flavor.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.09615384615384616,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Oatmeal Stout",
+            "beer_style": "Oatmeal Stout",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Double Barrel Oatmeal Stout",
+            "beer_style": "Oatmeal Stout",
+            "abv": 5.4,
+            "review_overall": 4.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Willimantic Special Delivery Oatmeal Stout",
+            "beer_style": "Oatmeal Stout",
+            "abv": 5.5,
+            "review_overall": 4.75,
+            "review_count": 2,
+            "relevant": true
+          },
+          {
+            "beer_name": "Oatmeal Stout",
+            "beer_style": "Oatmeal Stout",
+            "abv": "",
+            "review_overall": 4.166666666666667,
+            "review_count": 3,
+            "relevant": true
+          },
+          {
+            "beer_name": "Oatmeal Stout",
+            "beer_style": "Oatmeal Stout",
+            "abv": 5.2,
+            "review_overall": 4.5,
+            "review_count": 1,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "oatmeal-stout",
+        "query": "Recommend a smooth oatmeal stout with a creamy body and roasted flavor.",
+        "relevant_results": 4,
+        "precision_at_k": 0.8,
+        "recall_at_k": 0.07692307692307693,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg_at_k": 0.6608397947263839,
+        "retrieved": [
+          {
+            "beer_name": "Earl Oatmeal Coffee Stout",
+            "beer_style": "American Stout",
+            "abv": 7.2,
+            "review_overall": 4.161290322580645,
+            "review_count": 31,
+            "relevant": false
+          },
+          {
+            "beer_name": "Oatmeal Stout",
+            "beer_style": "Oatmeal Stout",
+            "abv": "",
+            "review_overall": 3.954545454545455,
+            "review_count": 11,
+            "relevant": true
+          },
+          {
+            "beer_name": "Oatmeal Stout",
+            "beer_style": "Oatmeal Stout",
+            "abv": "",
+            "review_overall": 4.166666666666667,
+            "review_count": 3,
+            "relevant": true
+          },
+          {
+            "beer_name": "Brown's Oatmeal Stout",
+            "beer_style": "Oatmeal Stout",
+            "abv": 5.25,
+            "review_overall": 3.6666666666666665,
+            "review_count": 54,
+            "relevant": true
+          },
+          {
+            "beer_name": "Willimantic Special Delivery Oatmeal Stout",
+            "beer_style": "Oatmeal Stout",
+            "abv": 5.5,
+            "review_overall": 4.75,
+            "review_count": 2,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "irish-dry-stout",
+      "query": "Suggest a dry Irish stout with roasted barley and a moderate body.",
+      "baseline": {
+        "id": "irish-dry-stout",
+        "query": "Suggest a dry Irish stout with roasted barley and a moderate body.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.11363636363636363,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Blast Furnace Irish Stout",
+            "beer_style": "Irish Dry Stout",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Irish Dry Stout",
+            "beer_style": "Irish Dry Stout",
+            "abv": 4.2,
+            "review_overall": 4.21875,
+            "review_count": 16,
+            "relevant": true
+          },
+          {
+            "beer_name": "Larkin's Irish Stout",
+            "beer_style": "Irish Dry Stout",
+            "abv": 3.5,
+            "review_overall": 3.5,
+            "review_count": 9,
+            "relevant": true
+          },
+          {
+            "beer_name": "Dry Stout",
+            "beer_style": "Irish Dry Stout",
+            "abv": 5.8,
+            "review_overall": 4.0,
+            "review_count": 2,
+            "relevant": true
+          },
+          {
+            "beer_name": "Daedalus Irish Stout",
+            "beer_style": "Irish Dry Stout",
+            "abv": 4.7,
+            "review_overall": 4.0,
+            "review_count": 2,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "irish-dry-stout",
+        "query": "Suggest a dry Irish stout with roasted barley and a moderate body.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.11363636363636363,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Irish Dry Stout",
+            "beer_style": "Irish Dry Stout",
+            "abv": 4.2,
+            "review_overall": 4.21875,
+            "review_count": 16,
+            "relevant": true
+          },
+          {
+            "beer_name": "Moylans Dragoons Dry Irish Stout",
+            "beer_style": "Irish Dry Stout",
+            "abv": 5.0,
+            "review_overall": 3.9873417721518982,
+            "review_count": 158,
+            "relevant": true
+          },
+          {
+            "beer_name": "Larkin's Irish Stout",
+            "beer_style": "Irish Dry Stout",
+            "abv": 3.5,
+            "review_overall": 3.5,
+            "review_count": 9,
+            "relevant": true
+          },
+          {
+            "beer_name": "Hillsborough River Dry Stout (Patio Tools)",
+            "beer_style": "Irish Dry Stout",
+            "abv": 5.0,
+            "review_overall": 4.145161290322581,
+            "review_count": 31,
+            "relevant": true
+          },
+          {
+            "beer_name": "Blast Furnace Irish Stout",
+            "beer_style": "Irish Dry Stout",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "imperial-stout-high-abv",
+      "query": "Find a high-ABV imperial stout with intense roast and dark chocolate.",
+      "baseline": {
+        "id": "imperial-stout-high-abv",
+        "query": "Find a high-ABV imperial stout with intense roast and dark chocolate.",
+        "relevant_results": 2,
+        "precision_at_k": 0.4,
+        "recall_at_k": 0.015625,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.48522855511632257,
+        "retrieved": [
+          {
+            "beer_name": "Heavy Handed: Double Chocolate Stout",
+            "beer_style": "American Double / Imperial Stout",
+            "abv": 7.5,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Milk Chocolate Stout",
+            "beer_style": "Milk / Sweet Stout",
+            "abv": "",
+            "review_overall": 3.5,
+            "review_count": 4,
+            "relevant": false
+          },
+          {
+            "beer_name": "Chocolate Raspberry Stout",
+            "beer_style": "American Stout",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Toaster - 4th Anniversary Imperial Stout",
+            "beer_style": "American Double / Imperial Stout",
+            "abv": "",
+            "review_overall": 4.087301587301587,
+            "review_count": 63,
+            "relevant": true
+          },
+          {
+            "beer_name": "Bourbon Barrel Chocolate Stout",
+            "beer_style": "American Stout",
+            "abv": 6.8,
+            "review_overall": 3.0,
+            "review_count": 3,
+            "relevant": false
+          }
+        ]
+      },
+      "reranked": {
+        "id": "imperial-stout-high-abv",
+        "query": "Find a high-ABV imperial stout with intense roast and dark chocolate.",
+        "relevant_results": 4,
+        "precision_at_k": 0.8,
+        "recall_at_k": 0.03125,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.8539316501572937,
+        "retrieved": [
+          {
+            "beer_name": "Siberian Night Imperial Stout",
+            "beer_style": "Russian Imperial Stout",
+            "abv": 9.7,
+            "review_overall": 4.164189189189189,
+            "review_count": 740,
+            "relevant": true
+          },
+          {
+            "beer_name": "Toaster - 4th Anniversary Imperial Stout",
+            "beer_style": "American Double / Imperial Stout",
+            "abv": "",
+            "review_overall": 4.087301587301587,
+            "review_count": 63,
+            "relevant": true
+          },
+          {
+            "beer_name": "Heavy Handed: Double Chocolate Stout",
+            "beer_style": "American Double / Imperial Stout",
+            "abv": 7.5,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Milk Chocolate Stout",
+            "beer_style": "Milk / Sweet Stout",
+            "abv": "",
+            "review_overall": 3.5,
+            "review_count": 4,
+            "relevant": false
+          },
+          {
+            "beer_name": "Barrel Aged Imperial Stout Trooper",
+            "beer_style": "Russian Imperial Stout",
+            "abv": "",
+            "review_overall": 3.5,
+            "review_count": 78,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "fruit-beer",
+      "query": "Recommend a fruit beer with a clear berry or stone-fruit character.",
+      "baseline": {
+        "id": "fruit-beer",
+        "query": "Recommend a fruit beer with a clear berry or stone-fruit character.",
+        "relevant_results": 4,
+        "precision_at_k": 0.8,
+        "recall_at_k": 0.025806451612903226,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.830419897363192,
+        "retrieved": [
+          {
+            "beer_name": "St. Peter's Fruit Beer (Grapefruit)",
+            "beer_style": "Fruit / Vegetable Beer",
+            "abv": 4.7,
+            "review_overall": 3.676470588235294,
+            "review_count": 17,
+            "relevant": true
+          },
+          {
+            "beer_name": "Fruitylicious",
+            "beer_style": "Fruit / Vegetable Beer",
+            "abv": "",
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Mad Wild Grapes",
+            "beer_style": "American Wild Ale",
+            "abv": "",
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Exotic Erotic Passion Fruit Ale",
+            "beer_style": "Fruit / Vegetable Beer",
+            "abv": 5.0,
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Brainless On Peaches Belgian Style Ale",
+            "beer_style": "Fruit / Vegetable Beer",
+            "abv": 10.5,
+            "review_overall": 3.4696969696969697,
+            "review_count": 66,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "fruit-beer",
+        "query": "Recommend a fruit beer with a clear berry or stone-fruit character.",
+        "relevant_results": 4,
+        "precision_at_k": 0.8,
+        "recall_at_k": 0.025806451612903226,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.8687949224876582,
+        "retrieved": [
+          {
+            "beer_name": "St. Peter's Fruit Beer (Grapefruit)",
+            "beer_style": "Fruit / Vegetable Beer",
+            "abv": 4.7,
+            "review_overall": 3.676470588235294,
+            "review_count": 17,
+            "relevant": true
+          },
+          {
+            "beer_name": "Brainless On Peaches Belgian Style Ale",
+            "beer_style": "Fruit / Vegetable Beer",
+            "abv": 10.5,
+            "review_overall": 3.4696969696969697,
+            "review_count": 66,
+            "relevant": true
+          },
+          {
+            "beer_name": "Fruitylicious",
+            "beer_style": "Fruit / Vegetable Beer",
+            "abv": "",
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Mad Elf Blackberry Ale",
+            "beer_style": "Fruit / Vegetable Beer",
+            "abv": 4.7,
+            "review_overall": 3.75,
+            "review_count": 6,
+            "relevant": true
+          },
+          {
+            "beer_name": "Mad Wild Grapes",
+            "beer_style": "American Wild Ale",
+            "abv": "",
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pumpkin-spice",
+      "query": "I would like a seasonal pumpkin ale with warming baking spices.",
+      "baseline": {
+        "id": "pumpkin-spice",
+        "query": "I would like a seasonal pumpkin ale with warming baking spices.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.16129032258064516,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Pumpkin Spice",
+            "beer_style": "Pumpkin Ale",
+            "abv": 5.0,
+            "review_overall": 3.25,
+            "review_count": 2,
+            "relevant": true
+          },
+          {
+            "beer_name": "Jack O'Lager Pumpkin Ale",
+            "beer_style": "Pumpkin Ale",
+            "abv": 4.4,
+            "review_overall": 3.9,
+            "review_count": 5,
+            "relevant": true
+          },
+          {
+            "beer_name": "Daddy's Lil Pumpkin Ale",
+            "beer_style": "Pumpkin Ale",
+            "abv": "",
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Wormtown Pumpkin Ale",
+            "beer_style": "Pumpkin Ale",
+            "abv": 4.3,
+            "review_overall": 4.25,
+            "review_count": 6,
+            "relevant": true
+          },
+          {
+            "beer_name": "Southampton Pumpkin Ale",
+            "beer_style": "Pumpkin Ale",
+            "abv": 5.5,
+            "review_overall": 3.829457364341085,
+            "review_count": 258,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "pumpkin-spice",
+        "query": "I would like a seasonal pumpkin ale with warming baking spices.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.16129032258064516,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Southampton Pumpkin Ale",
+            "beer_style": "Pumpkin Ale",
+            "abv": 5.5,
+            "review_overall": 3.829457364341085,
+            "review_count": 258,
+            "relevant": true
+          },
+          {
+            "beer_name": "Fisherman's Pumpkin Stout",
+            "beer_style": "Pumpkin Ale",
+            "abv": 7.0,
+            "review_overall": 3.770462633451957,
+            "review_count": 281,
+            "relevant": true
+          },
+          {
+            "beer_name": "Pumpkineater Imperial Ale",
+            "beer_style": "Pumpkin Ale",
+            "abv": 8.0,
+            "review_overall": 3.8461538461538463,
+            "review_count": 26,
+            "relevant": true
+          },
+          {
+            "beer_name": "Schlafly Pumpkin Ale",
+            "beer_style": "Pumpkin Ale",
+            "abv": 8.0,
+            "review_overall": 4.1,
+            "review_count": 295,
+            "relevant": true
+          },
+          {
+            "beer_name": "Pumpkin Spice",
+            "beer_style": "Pumpkin Ale",
+            "abv": 5.0,
+            "review_overall": 3.25,
+            "review_count": 2,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "rye-spicy",
+      "query": "Find a rye beer with spicy grain character and a firm hop finish.",
+      "baseline": {
+        "id": "rye-spicy",
+        "query": "Find a rye beer with spicy grain character and a firm hop finish.",
+        "relevant_results": 3,
+        "precision_at_k": 0.6,
+        "recall_at_k": 0.08333333333333333,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg_at_k": 0.4912596920895758,
+        "retrieved": [
+          {
+            "beer_name": "Rye Union Porter",
+            "beer_style": "Baltic Porter",
+            "abv": 7.5,
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Rye-on-Rye",
+            "beer_style": "Rye Beer",
+            "abv": 11.0,
+            "review_overall": 4.038167938931298,
+            "review_count": 131,
+            "relevant": true
+          },
+          {
+            "beer_name": "Key Lime Rye",
+            "beer_style": "Saison / Farmhouse Ale",
+            "abv": 5.3,
+            "review_overall": 3.0,
+            "review_count": 2,
+            "relevant": false
+          },
+          {
+            "beer_name": "Riley's Rye",
+            "beer_style": "Rye Beer",
+            "abv": 6.5,
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Rye Pale Ale",
+            "beer_style": "Rye Beer",
+            "abv": "",
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "rye-spicy",
+        "query": "Find a rye beer with spicy grain character and a firm hop finish.",
+        "relevant_results": 3,
+        "precision_at_k": 0.6,
+        "recall_at_k": 0.08333333333333333,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.6843515475204855,
+        "retrieved": [
+          {
+            "beer_name": "Rye-on-Rye",
+            "beer_style": "Rye Beer",
+            "abv": 11.0,
+            "review_overall": 4.038167938931298,
+            "review_count": 131,
+            "relevant": true
+          },
+          {
+            "beer_name": "RyePA",
+            "beer_style": "Rye Beer",
+            "abv": "",
+            "review_overall": 4.157894736842105,
+            "review_count": 19,
+            "relevant": true
+          },
+          {
+            "beer_name": "Rye Union Porter",
+            "beer_style": "Baltic Porter",
+            "abv": 7.5,
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Key Lime Rye",
+            "beer_style": "Saison / Farmhouse Ale",
+            "abv": 5.3,
+            "review_overall": 3.0,
+            "review_count": 2,
+            "relevant": false
+          },
+          {
+            "beer_name": "Riley's Rye",
+            "beer_style": "Rye Beer",
+            "abv": 6.5,
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "winter-warmer",
+      "query": "Suggest a winter warmer with rich malt, spice, and a warming finish.",
+      "baseline": {
+        "id": "winter-warmer",
+        "query": "Suggest a winter warmer with rich malt, spice, and a warming finish.",
+        "relevant_results": 3,
+        "precision_at_k": 0.6,
+        "recall_at_k": 0.06976744186046512,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.6548086577531307,
+        "retrieved": [
+          {
+            "beer_name": "Festivus Winter Warmer",
+            "beer_style": "Winter Warmer",
+            "abv": 5.5,
+            "review_overall": 3.9,
+            "review_count": 5,
+            "relevant": true
+          },
+          {
+            "beer_name": "Warmer Winter Winter Warmer - Coriander",
+            "beer_style": "Old Ale",
+            "abv": 10.0,
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Santa's Smokin' Winter Warmer",
+            "beer_style": "Winter Warmer",
+            "abv": 7.1,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "S.B.C. Winter Special (Xmas Ale)",
+            "beer_style": "Winter Warmer",
+            "abv": 7.5,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Winter Solstice",
+            "beer_style": "Belgian Dark Ale",
+            "abv": "",
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": false
+          }
+        ]
+      },
+      "reranked": {
+        "id": "winter-warmer",
+        "query": "Suggest a winter warmer with rich malt, spice, and a warming finish.",
+        "relevant_results": 3,
+        "precision_at_k": 0.6,
+        "recall_at_k": 0.06976744186046512,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.6164336326286644,
+        "retrieved": [
+          {
+            "beer_name": "Festivus Winter Warmer",
+            "beer_style": "Winter Warmer",
+            "abv": 5.5,
+            "review_overall": 3.9,
+            "review_count": 5,
+            "relevant": true
+          },
+          {
+            "beer_name": "Cocoa Porter Winter Warmer",
+            "beer_style": "American Porter",
+            "abv": 5.7,
+            "review_overall": 3.205263157894737,
+            "review_count": 190,
+            "relevant": false
+          },
+          {
+            "beer_name": "Warmer Winter Winter Warmer - Coriander",
+            "beer_style": "Old Ale",
+            "abv": 10.0,
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Winter Wonder",
+            "beer_style": "Winter Warmer",
+            "abv": 8.0,
+            "review_overall": 3.7,
+            "review_count": 10,
+            "relevant": true
+          },
+          {
+            "beer_name": "Santa's Smokin' Winter Warmer",
+            "beer_style": "Winter Warmer",
+            "abv": 7.1,
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "wild-funky-sour",
+      "query": "I want a funky wild ale with tartness and complex fermentation character.",
+      "baseline": {
+        "id": "wild-funky-sour",
+        "query": "I want a funky wild ale with tartness and complex fermentation character.",
+        "relevant_results": 3,
+        "precision_at_k": 0.6,
+        "recall_at_k": 0.057692307692307696,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.6992148198508501,
+        "retrieved": [
+          {
+            "beer_name": "Syrah Barrel La Trappistine With Brettanomyces",
+            "beer_style": "American Wild Ale",
+            "abv": 9.5,
+            "review_overall": 3.5,
+            "review_count": 2,
+            "relevant": true
+          },
+          {
+            "beer_name": "Bottleworks 10th Anniversary Wild Ale",
+            "beer_style": "American Wild Ale",
+            "abv": 6.5,
+            "review_overall": 4.256756756756757,
+            "review_count": 37,
+            "relevant": true
+          },
+          {
+            "beer_name": "Tun Golden Ale",
+            "beer_style": "Belgian Strong Pale Ale",
+            "abv": 8.5,
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Inception Ale",
+            "beer_style": "American Wild Ale",
+            "abv": 6.0,
+            "review_overall": 4.0,
+            "review_count": 2,
+            "relevant": true
+          },
+          {
+            "beer_name": "Deluxe Organic Ale",
+            "beer_style": "American Strong Ale",
+            "abv": 6.9,
+            "review_overall": 3.803030303030303,
+            "review_count": 33,
+            "relevant": false
+          }
+        ]
+      },
+      "reranked": {
+        "id": "wild-funky-sour",
+        "query": "I want a funky wild ale with tartness and complex fermentation character.",
+        "relevant_results": 3,
+        "precision_at_k": 0.6,
+        "recall_at_k": 0.057692307692307696,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.6992148198508501,
+        "retrieved": [
+          {
+            "beer_name": "Bottleworks 10th Anniversary Wild Ale",
+            "beer_style": "American Wild Ale",
+            "abv": 6.5,
+            "review_overall": 4.256756756756757,
+            "review_count": 37,
+            "relevant": true
+          },
+          {
+            "beer_name": "Rapture",
+            "beer_style": "American Wild Ale",
+            "abv": 6.7,
+            "review_overall": 4.166666666666667,
+            "review_count": 51,
+            "relevant": true
+          },
+          {
+            "beer_name": "Chatoe Rogue First Growth Single Malt Ale",
+            "beer_style": "American Blonde Ale",
+            "abv": 5.3,
+            "review_overall": 3.801652892561984,
+            "review_count": 121,
+            "relevant": false
+          },
+          {
+            "beer_name": "Ananke",
+            "beer_style": "American Wild Ale",
+            "abv": 5.8,
+            "review_overall": 4.344827586206897,
+            "review_count": 29,
+            "relevant": true
+          },
+          {
+            "beer_name": "Deluxe Organic Ale",
+            "beer_style": "American Strong Ale",
+            "abv": 6.9,
+            "review_overall": 3.803030303030303,
+            "review_count": 33,
+            "relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "lambic-fruit",
+      "query": "Recommend a fruit lambic with bright acidity and fresh fruit character.",
+      "baseline": {
+        "id": "lambic-fruit",
+        "query": "Recommend a fruit lambic with bright acidity and fresh fruit character.",
+        "relevant_results": 4,
+        "precision_at_k": 0.8,
+        "recall_at_k": 0.17391304347826086,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.8539316501572937,
+        "retrieved": [
+          {
+            "beer_name": "Peach Lambic",
+            "beer_style": "Lambic - Fruit",
+            "abv": 5.24,
+            "review_overall": 3.4545454545454546,
+            "review_count": 11,
+            "relevant": true
+          },
+          {
+            "beer_name": "Raspberry Lambic",
+            "beer_style": "Lambic - Fruit",
+            "abv": "",
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Chapeau Apricot Lambic",
+            "beer_style": "Lambic - Fruit",
+            "abv": 3.0,
+            "review_overall": 3.1724137931034484,
+            "review_count": 29,
+            "relevant": true
+          },
+          {
+            "beer_name": "Single Dry Hop Lambic - Pacific Gem",
+            "beer_style": "Lambic - Unblended",
+            "abv": 5.0,
+            "review_overall": 5.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Peche Lambic",
+            "beer_style": "Lambic - Fruit",
+            "abv": 6.2,
+            "review_overall": 4.642857142857143,
+            "review_count": 7,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "lambic-fruit",
+        "query": "Recommend a fruit lambic with bright acidity and fresh fruit character.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.21739130434782608,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Peach Lambic",
+            "beer_style": "Lambic - Fruit",
+            "abv": 5.24,
+            "review_overall": 3.4545454545454546,
+            "review_count": 11,
+            "relevant": true
+          },
+          {
+            "beer_name": "Raspberry Lambic",
+            "beer_style": "Lambic - Fruit",
+            "abv": "",
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Chapeau Apricot Lambic",
+            "beer_style": "Lambic - Fruit",
+            "abv": 3.0,
+            "review_overall": 3.1724137931034484,
+            "review_count": 29,
+            "relevant": true
+          },
+          {
+            "beer_name": "Peche Lambic",
+            "beer_style": "Lambic - Fruit",
+            "abv": 6.2,
+            "review_overall": 4.642857142857143,
+            "review_count": 7,
+            "relevant": true
+          },
+          {
+            "beer_name": "Chapeau Mirabelle Lambic",
+            "beer_style": "Lambic - Fruit",
+            "abv": 3.0,
+            "review_overall": 3.3,
+            "review_count": 25,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "berliner-weiss",
+      "query": "Find a tart, refreshing Berliner Weisse with a light body.",
+      "baseline": {
+        "id": "berliner-weiss",
+        "query": "Find a tart, refreshing Berliner Weisse with a light body.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.5555555555555556,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Berliner Weisse",
+            "beer_style": "Berliner Weissbier",
+            "abv": "",
+            "review_overall": 3.8333333333333335,
+            "review_count": 3,
+            "relevant": true
+          },
+          {
+            "beer_name": "Berliner Weisse",
+            "beer_style": "Berliner Weissbier",
+            "abv": 3.7,
+            "review_overall": 3.8,
+            "review_count": 5,
+            "relevant": true
+          },
+          {
+            "beer_name": "Berliner Weisse",
+            "beer_style": "Berliner Weissbier",
+            "abv": 3.75,
+            "review_overall": 4.0,
+            "review_count": 43,
+            "relevant": true
+          },
+          {
+            "beer_name": "Pumpkin Berliner Weisse",
+            "beer_style": "Berliner Weissbier",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Lichtenhainer Weisse",
+            "beer_style": "Berliner Weissbier",
+            "abv": 5.0,
+            "review_overall": 5.0,
+            "review_count": 1,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "berliner-weiss",
+        "query": "Find a tart, refreshing Berliner Weisse with a light body.",
+        "relevant_results": 4,
+        "precision_at_k": 0.8,
+        "recall_at_k": 0.4444444444444444,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.8687949224876582,
+        "retrieved": [
+          {
+            "beer_name": "Berliner Weisse",
+            "beer_style": "Berliner Weissbier",
+            "abv": 3.75,
+            "review_overall": 4.0,
+            "review_count": 43,
+            "relevant": true
+          },
+          {
+            "beer_name": "Berliner Weisse",
+            "beer_style": "Berliner Weissbier",
+            "abv": "",
+            "review_overall": 3.8333333333333335,
+            "review_count": 3,
+            "relevant": true
+          },
+          {
+            "beer_name": "White Birch Berliner Weisse",
+            "beer_style": "Berliner Weissbier",
+            "abv": 6.4,
+            "review_overall": 3.9683544303797462,
+            "review_count": 79,
+            "relevant": true
+          },
+          {
+            "beer_name": "Berliner Weisse",
+            "beer_style": "Berliner Weissbier",
+            "abv": 3.7,
+            "review_overall": 3.8,
+            "review_count": 5,
+            "relevant": true
+          },
+          {
+            "beer_name": "Schneider Weisse Original",
+            "beer_style": "Hefeweizen",
+            "abv": 5.4,
+            "review_overall": 4.086894586894587,
+            "review_count": 702,
+            "relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "vienna-malt",
+      "query": "Recommend a Vienna lager with toasty malt and a crisp finish.",
+      "baseline": {
+        "id": "vienna-malt",
+        "query": "Recommend a Vienna lager with toasty malt and a crisp finish.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.1388888888888889,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Vienna Lager",
+            "beer_style": "Vienna Lager",
+            "abv": 6.6,
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Vienna Lager",
+            "beer_style": "Vienna Lager",
+            "abv": 5.2,
+            "review_overall": 4.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Vienna Lager",
+            "beer_style": "Vienna Lager",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Vienna Lager",
+            "beer_style": "Vienna Lager",
+            "abv": "",
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Vienna Lager",
+            "beer_style": "Vienna Lager",
+            "abv": "",
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "vienna-malt",
+        "query": "Recommend a Vienna lager with toasty malt and a crisp finish.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.1388888888888889,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Vienna Red Lager",
+            "beer_style": "Vienna Lager",
+            "abv": 4.4,
+            "review_overall": 3.7708333333333335,
+            "review_count": 24,
+            "relevant": true
+          },
+          {
+            "beer_name": "Vienna Lager",
+            "beer_style": "Vienna Lager",
+            "abv": 6.6,
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Vienna Lager",
+            "beer_style": "Vienna Lager",
+            "abv": 5.2,
+            "review_overall": 4.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Viennese Lager",
+            "beer_style": "Vienna Lager",
+            "abv": 4.0,
+            "review_overall": 4.0,
+            "review_count": 16,
+            "relevant": true
+          },
+          {
+            "beer_name": "Vienna Lager",
+            "beer_style": "Vienna Lager",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 1,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "marzen-oktoberfest",
+      "query": "Suggest a smooth Oktoberfest beer with toasted bread and balanced malt.",
+      "baseline": {
+        "id": "marzen-oktoberfest",
+        "query": "Suggest a smooth Oktoberfest beer with toasted bread and balanced malt.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.06578947368421052,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Oktoberfest Revolution",
+            "beer_style": "Märzen / Oktoberfest",
+            "abv": 6.3,
+            "review_overall": 3.7,
+            "review_count": 5,
+            "relevant": true
+          },
+          {
+            "beer_name": "Oktoberfest",
+            "beer_style": "Märzen / Oktoberfest",
+            "abv": 6.0,
+            "review_overall": 3.9655172413793114,
+            "review_count": 29,
+            "relevant": true
+          },
+          {
+            "beer_name": "Oktoberfest",
+            "beer_style": "Märzen / Oktoberfest",
+            "abv": 5.7,
+            "review_overall": 4.0,
+            "review_count": 2,
+            "relevant": true
+          },
+          {
+            "beer_name": "Tabernash Oktoberfest",
+            "beer_style": "Märzen / Oktoberfest",
+            "abv": 6.5,
+            "review_overall": 3.581395348837209,
+            "review_count": 43,
+            "relevant": true
+          },
+          {
+            "beer_name": "Eisenbahn Oktoberfest",
+            "beer_style": "Märzen / Oktoberfest",
+            "abv": 5.5,
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "marzen-oktoberfest",
+        "query": "Suggest a smooth Oktoberfest beer with toasted bread and balanced malt.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.06578947368421052,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Oktoberfest",
+            "beer_style": "Märzen / Oktoberfest",
+            "abv": 6.0,
+            "review_overall": 3.9655172413793114,
+            "review_count": 29,
+            "relevant": true
+          },
+          {
+            "beer_name": "Köstritzer Oktoberfest",
+            "beer_style": "Märzen / Oktoberfest",
+            "abv": 5.6,
+            "review_overall": 3.792929292929293,
+            "review_count": 99,
+            "relevant": true
+          },
+          {
+            "beer_name": "Oktoberfest Revolution",
+            "beer_style": "Märzen / Oktoberfest",
+            "abv": 6.3,
+            "review_overall": 3.7,
+            "review_count": 5,
+            "relevant": true
+          },
+          {
+            "beer_name": "Tabernash Oktoberfest",
+            "beer_style": "Märzen / Oktoberfest",
+            "abv": 6.5,
+            "review_overall": 3.581395348837209,
+            "review_count": 43,
+            "relevant": true
+          },
+          {
+            "beer_name": "Special Edition - Oktoberfest Lager",
+            "beer_style": "Märzen / Oktoberfest",
+            "abv": 6.1,
+            "review_overall": 3.716216216216216,
+            "review_count": 74,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "american-strong-ale",
+      "query": "Find a strong American ale with bold malt and a warming finish.",
+      "baseline": {
+        "id": "american-strong-ale",
+        "query": "Find a strong American ale with bold malt and a warming finish.",
+        "relevant_results": 1,
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.015625,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.3391602052736161,
+        "retrieved": [
+          {
+            "beer_name": "Winter Solstice Ale",
+            "beer_style": "American Strong Ale",
+            "abv": "",
+            "review_overall": 4.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Single Malt Ale",
+            "beer_style": "English Bitter",
+            "abv": 4.5,
+            "review_overall": 3.25,
+            "review_count": 2,
+            "relevant": false
+          },
+          {
+            "beer_name": "Ale Ale",
+            "beer_style": "English Pale Ale",
+            "abv": 5.8,
+            "review_overall": 2.25,
+            "review_count": 2,
+            "relevant": false
+          },
+          {
+            "beer_name": "Warmer Winter Winter Warmer - Coriander",
+            "beer_style": "Old Ale",
+            "abv": 10.0,
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Rapture",
+            "beer_style": "American Wild Ale",
+            "abv": 6.7,
+            "review_overall": 4.166666666666667,
+            "review_count": 51,
+            "relevant": false
+          }
+        ]
+      },
+      "reranked": {
+        "id": "american-strong-ale",
+        "query": "Find a strong American ale with bold malt and a warming finish.",
+        "relevant_results": 1,
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.015625,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 0.25,
+        "ndcg_at_k": 0.14606834984270645,
+        "retrieved": [
+          {
+            "beer_name": "Rapture",
+            "beer_style": "American Wild Ale",
+            "abv": 6.7,
+            "review_overall": 4.166666666666667,
+            "review_count": 51,
+            "relevant": false
+          },
+          {
+            "beer_name": "Our Special Ale 2005 (Anchor Christmas Ale)",
+            "beer_style": "Winter Warmer",
+            "abv": 5.8,
+            "review_overall": 3.78544061302682,
+            "review_count": 261,
+            "relevant": false
+          },
+          {
+            "beer_name": "Our Special Ale 2006 (Anchor Christmas Ale)",
+            "beer_style": "Winter Warmer",
+            "abv": 5.5,
+            "review_overall": 3.868217054263566,
+            "review_count": 258,
+            "relevant": false
+          },
+          {
+            "beer_name": "Winter Solstice Ale",
+            "beer_style": "American Strong Ale",
+            "abv": "",
+            "review_overall": 4.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Single Malt Ale",
+            "beer_style": "English Bitter",
+            "abv": 4.5,
+            "review_overall": 3.25,
+            "review_count": 2,
+            "relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "english-pale-ale",
+      "query": "I want an English pale ale with earthy hops and balanced malt.",
+      "baseline": {
+        "id": "english-pale-ale",
+        "query": "I want an English pale ale with earthy hops and balanced malt.",
+        "relevant_results": 1,
+        "precision_at_k": 0.2,
+        "recall_at_k": 0.011764705882352941,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 0.5,
+        "ndcg_at_k": 0.21398626473452756,
+        "retrieved": [
+          {
+            "beer_name": "Tall Tale Pale Ale (dry-hopped With Glacier)",
+            "beer_style": "American Pale Ale (APA)",
+            "abv": 5.7,
+            "review_overall": 4.5,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Dusky Pale Ale",
+            "beer_style": "English Pale Ale",
+            "abv": 5.0,
+            "review_overall": 3.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Frog Hop Fresh Hopped Pale Ale",
+            "beer_style": "American Pale Ale (APA)",
+            "abv": 5.0,
+            "review_overall": 3.375,
+            "review_count": 4,
+            "relevant": false
+          },
+          {
+            "beer_name": "Hop Candy",
+            "beer_style": "American IPA",
+            "abv": "",
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": false
+          },
+          {
+            "beer_name": "Hopluia",
+            "beer_style": "English India Pale Ale (IPA)",
+            "abv": "",
+            "review_overall": 3.5961538461538463,
+            "review_count": 78,
+            "relevant": false
+          }
+        ]
+      },
+      "reranked": {
+        "id": "english-pale-ale",
+        "query": "I want an English pale ale with earthy hops and balanced malt.",
+        "relevant_results": 0,
+        "precision_at_k": 0.0,
+        "recall_at_k": 0.0,
+        "hit_rate_at_k": 0.0,
+        "reciprocal_rank": 0.0,
+        "ndcg_at_k": 0.0,
+        "retrieved": [
+          {
+            "beer_name": "Fresh Hop Pale Ale",
+            "beer_style": "American Pale Ale (APA)",
+            "abv": 6.1,
+            "review_overall": 4.13628762541806,
+            "review_count": 598,
+            "relevant": false
+          },
+          {
+            "beer_name": "Hop Hog India Pale Ale",
+            "beer_style": "American IPA",
+            "abv": 7.9,
+            "review_overall": 3.5678466076696167,
+            "review_count": 339,
+            "relevant": false
+          },
+          {
+            "beer_name": "Hopluia",
+            "beer_style": "English India Pale Ale (IPA)",
+            "abv": "",
+            "review_overall": 3.5961538461538463,
+            "review_count": 78,
+            "relevant": false
+          },
+          {
+            "beer_name": "422 Pale Wheat Ale",
+            "beer_style": "American Pale Wheat Ale",
+            "abv": 5.8,
+            "review_overall": 3.6952789699570814,
+            "review_count": 233,
+            "relevant": false
+          },
+          {
+            "beer_name": "Tall Tale Pale Ale (dry-hopped With Glacier)",
+            "beer_style": "American Pale Ale (APA)",
+            "abv": 5.7,
+            "review_overall": 4.5,
+            "review_count": 1,
+            "relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "european-pale-lager",
+      "query": "Recommend a clean European pale lager with a crisp, refreshing finish.",
+      "baseline": {
+        "id": "european-pale-lager",
+        "query": "Recommend a clean European pale lager with a crisp, refreshing finish.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.041666666666666664,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Tesco Dutch Export Lager",
+            "beer_style": "Euro Pale Lager",
+            "abv": 3.0,
+            "review_overall": 2.0,
+            "review_count": 2,
+            "relevant": true
+          },
+          {
+            "beer_name": "Tesco Imported Lager",
+            "beer_style": "Euro Pale Lager",
+            "abv": 4.0,
+            "review_overall": 2.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Bright Lager",
+            "beer_style": "Euro Pale Lager",
+            "abv": 4.3,
+            "review_overall": 3.25,
+            "review_count": 2,
+            "relevant": true
+          },
+          {
+            "beer_name": "Lager",
+            "beer_style": "Euro Pale Lager",
+            "abv": 5.0,
+            "review_overall": 2.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "London Lager (Liquid London)",
+            "beer_style": "Euro Pale Lager",
+            "abv": 4.5,
+            "review_overall": 3.4,
+            "review_count": 5,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "european-pale-lager",
+        "query": "Recommend a clean European pale lager with a crisp, refreshing finish.",
+        "relevant_results": 2,
+        "precision_at_k": 0.4,
+        "recall_at_k": 0.016666666666666666,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.48522855511632257,
+        "retrieved": [
+          {
+            "beer_name": "O.K. Beer",
+            "beer_style": "Euro Pale Lager",
+            "abv": 5.6,
+            "review_overall": 3.727810650887574,
+            "review_count": 169,
+            "relevant": true
+          },
+          {
+            "beer_name": "Lager",
+            "beer_style": "American Pale Lager",
+            "abv": 5.0,
+            "review_overall": 3.618181818181818,
+            "review_count": 55,
+            "relevant": false
+          },
+          {
+            "beer_name": "Bürger Classic",
+            "beer_style": "American Pale Lager",
+            "abv": 4.7,
+            "review_overall": 3.3625,
+            "review_count": 40,
+            "relevant": false
+          },
+          {
+            "beer_name": "The Raven Special Lager",
+            "beer_style": "Euro Pale Lager",
+            "abv": 5.5,
+            "review_overall": 3.629032258064516,
+            "review_count": 62,
+            "relevant": true
+          },
+          {
+            "beer_name": "Heavy Seas - Classic Lager",
+            "beer_style": "American Pale Lager",
+            "abv": 5.0,
+            "review_overall": 3.909090909090909,
+            "review_count": 22,
+            "relevant": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "amber-red-lager",
+      "query": "Find an amber lager with toasted malt and a smooth, clean finish.",
+      "baseline": {
+        "id": "amber-red-lager",
+        "query": "Find an amber lager with toasted malt and a smooth, clean finish.",
+        "relevant_results": 4,
+        "precision_at_k": 0.8,
+        "recall_at_k": 0.15384615384615385,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.8687949224876582,
+        "retrieved": [
+          {
+            "beer_name": "Big Fog Amber Lager",
+            "beer_style": "American Amber / Red Lager",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 3,
+            "relevant": true
+          },
+          {
+            "beer_name": "Irish Amber Lager",
+            "beer_style": "American Amber / Red Lager",
+            "abv": "",
+            "review_overall": 4.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Amber Lager",
+            "beer_style": "American Amber / Red Lager",
+            "abv": "",
+            "review_overall": 4.033333333333333,
+            "review_count": 30,
+            "relevant": true
+          },
+          {
+            "beer_name": "McCord's Scotch Lager",
+            "beer_style": "American Amber / Red Lager",
+            "abv": 6.8,
+            "review_overall": 4.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Suntory Malt's Beer",
+            "beer_style": "German Pilsener",
+            "abv": 5.0,
+            "review_overall": 3.730769230769231,
+            "review_count": 13,
+            "relevant": false
+          }
+        ]
+      },
+      "reranked": {
+        "id": "amber-red-lager",
+        "query": "Find an amber lager with toasted malt and a smooth, clean finish.",
+        "relevant_results": 4,
+        "precision_at_k": 0.8,
+        "recall_at_k": 0.15384615384615385,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 0.8539316501572937,
+        "retrieved": [
+          {
+            "beer_name": "Amber Lager",
+            "beer_style": "American Amber / Red Lager",
+            "abv": "",
+            "review_overall": 4.033333333333333,
+            "review_count": 30,
+            "relevant": true
+          },
+          {
+            "beer_name": "Coney Island Lager",
+            "beer_style": "American Amber / Red Lager",
+            "abv": 5.5,
+            "review_overall": 3.803030303030303,
+            "review_count": 231,
+            "relevant": true
+          },
+          {
+            "beer_name": "Big Fog Amber Lager",
+            "beer_style": "American Amber / Red Lager",
+            "abv": "",
+            "review_overall": 4.0,
+            "review_count": 3,
+            "relevant": true
+          },
+          {
+            "beer_name": "Suntory Malt's Beer",
+            "beer_style": "German Pilsener",
+            "abv": 5.0,
+            "review_overall": 3.730769230769231,
+            "review_count": 13,
+            "relevant": false
+          },
+          {
+            "beer_name": "Irish Amber Lager",
+            "beer_style": "American Amber / Red Lager",
+            "abv": "",
+            "review_overall": 4.5,
+            "review_count": 1,
+            "relevant": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "dortmunder-export",
+      "query": "Suggest a Dortmunder export lager that is crisp, malty, and slightly bitter.",
+      "baseline": {
+        "id": "dortmunder-export",
+        "query": "Suggest a Dortmunder export lager that is crisp, malty, and slightly bitter.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.16666666666666666,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "Hansa Export",
+            "beer_style": "Dortmunder / Export Lager",
+            "abv": 5.0,
+            "review_overall": 3.351851851851852,
+            "review_count": 27,
+            "relevant": true
+          },
+          {
+            "beer_name": "Schweiger Helles Export",
+            "beer_style": "Dortmunder / Export Lager",
+            "abv": 5.1,
+            "review_overall": 2.9,
+            "review_count": 5,
+            "relevant": true
+          },
+          {
+            "beer_name": "Export",
+            "beer_style": "Dortmunder / Export Lager",
+            "abv": 5.1,
+            "review_overall": 2.5,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Urtyp Export",
+            "beer_style": "Dortmunder / Export Lager",
+            "abv": 5.1,
+            "review_overall": 3.0,
+            "review_count": 1,
+            "relevant": true
+          },
+          {
+            "beer_name": "Dortmunder Lager",
+            "beer_style": "Dortmunder / Export Lager",
+            "abv": 5.4,
+            "review_overall": 3.95,
+            "review_count": 20,
+            "relevant": true
+          }
+        ]
+      },
+      "reranked": {
+        "id": "dortmunder-export",
+        "query": "Suggest a Dortmunder export lager that is crisp, malty, and slightly bitter.",
+        "relevant_results": 5,
+        "precision_at_k": 1.0,
+        "recall_at_k": 0.16666666666666666,
+        "hit_rate_at_k": 1.0,
+        "reciprocal_rank": 1.0,
+        "ndcg_at_k": 1.0,
+        "retrieved": [
+          {
+            "beer_name": "LongShot Dortmunder Style Export",
+            "beer_style": "Dortmunder / Export Lager",
+            "abv": 5.5,
+            "review_overall": 4.033333333333333,
+            "review_count": 210,
+            "relevant": true
+          },
+          {
+            "beer_name": "Hansa Export",
+            "beer_style": "Dortmunder / Export Lager",
+            "abv": 5.0,
+            "review_overall": 3.351851851851852,
+            "review_count": 27,
+            "relevant": true
+          },
+          {
+            "beer_name": "Ayinger Jahrhundert Bier",
+            "beer_style": "Dortmunder / Export Lager",
+            "abv": 5.5,
+            "review_overall": 4.156626506024097,
+            "review_count": 415,
+            "relevant": true
+          },
+          {
+            "beer_name": "Dortmunder Lager",
+            "beer_style": "Dortmunder / Export Lager",
+            "abv": 5.4,
+            "review_overall": 3.95,
+            "review_count": 20,
+            "relevant": true
+          },
+          {
+            "beer_name": "Schweiger Helles Export",
+            "beer_style": "Dortmunder / Export Lager",
+            "abv": 5.1,
+            "review_overall": 2.9,
+            "review_count": 5,
+            "relevant": true
+          }
+        ]
+      }
+    }
+  ],
+  "note": "Rótulos por estilo medem correspondência de categoria (proxy); prefira cervejas relevantes revisadas por humanos para avaliar relevância semântica."
+}

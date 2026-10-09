@@ -1,27 +1,52 @@
 [
-  {
-    "id": "hop-forward-ipa",
-    "query": "Recommend a hop-forward American IPA with a strong aroma.",
-    "relevant_styles": ["American IPA", "American Double / Imperial IPA"]
-  },
-  {
-    "id": "rich-stout",
-    "query": "I want a rich, dark stout with roasted and chocolate notes.",
-    "relevant_styles": ["American Double / Imperial Stout", "Russian Imperial Stout", "American Stout", "English Stout", "Foreign / Export Stout", "Oatmeal Stout", "Irish Dry Stout", "Milk / Sweet Stout"]
-  },
-  {
-    "id": "refreshing-wheat",
-    "query": "Suggest a light, refreshing wheat beer for a warm day.",
-    "relevant_styles": ["American Pale Wheat Ale", "Hefeweizen"]
-  },
-  {
-    "id": "sour-fruity",
-    "query": "Recommend a tart, fruity sour beer.",
-    "relevant_styles": ["American Wild Ale", "Berliner Weissbier"]
-  },
-  {
-    "id": "strong-belgian",
-    "query": "I am looking for a strong Belgian ale with a complex, fruity profile.",
-    "relevant_styles": ["Belgian Strong Dark Ale", "Belgian Strong Pale Ale"]
-  }
+  {"id":"hop-forward-ipa","query":"Recommend a hop-forward American IPA with a strong aroma.","relevant_styles":["American IPA","American Double / Imperial IPA"]},
+  {"id":"rich-stout","query":"I want a rich, dark stout with roasted and chocolate notes.","relevant_styles":["American Double / Imperial Stout","Russian Imperial Stout","American Stout","English Stout","Foreign / Export Stout","Oatmeal Stout","Irish Dry Stout","Milk / Sweet Stout"]},
+  {"id":"refreshing-wheat","query":"Suggest a light, refreshing wheat beer for a warm day.","relevant_styles":["American Pale Wheat Ale","Hefeweizen"]},
+  {"id":"sour-fruity","query":"Recommend a tart, fruity sour beer.","relevant_styles":["American Wild Ale","Berliner Weissbier"]},
+  {"id":"strong-belgian","query":"I am looking for a strong Belgian ale with a complex, fruity profile.","relevant_styles":["Belgian Strong Dark Ale","Belgian Strong Pale Ale"]},
+  {"id":"citrus-pale-ale","query":"Find a citrusy, floral pale ale with moderate bitterness.","relevant_styles":["American Pale Ale (APA)"]},
+  {"id":"caramel-amber","query":"I want an amber ale with a malty backbone and caramel notes.","relevant_styles":["American Amber / Red Ale"]},
+  {"id":"nutty-brown","query":"Recommend a smooth brown ale with toasted bread and nutty flavors.","relevant_styles":["American Brown Ale","English Brown Ale"]},
+  {"id":"chocolate-porter","query":"Suggest a dark porter with chocolate and coffee character.","relevant_styles":["American Porter","English Porter","Baltic Porter"]},
+  {"id":"english-porter","query":"I would like a classic English porter, balanced and easy to drink.","relevant_styles":["English Porter"]},
+  {"id":"czech-pilsner","query":"Find a crisp Czech pilsner with a clean finish and gentle hop bitterness.","relevant_styles":["Czech Pilsener"]},
+  {"id":"german-pilsner","query":"Recommend a dry German pilsner with a snappy, bitter finish.","relevant_styles":["German Pilsener"]},
+  {"id":"light-lager","query":"I want a very light, refreshing lager for a hot afternoon.","relevant_styles":["Light Lager","American Pale Lager","American Adjunct Lager"]},
+  {"id":"hefeweizen-banana","query":"Suggest a cloudy wheat beer with banana and clove notes.","relevant_styles":["Hefeweizen"]},
+  {"id":"witbier-citrus","query":"Recommend a Belgian wheat beer with citrus and coriander spice.","relevant_styles":["Witbier"]},
+  {"id":"saison-dry","query":"Find a dry farmhouse saison with peppery, fruity yeast character.","relevant_styles":["Saison / Farmhouse Ale"]},
+  {"id":"belgian-dubbel","query":"I am looking for a Belgian dubbel with dark fruit and toasted malt.","relevant_styles":["Dubbel"]},
+  {"id":"belgian-tripel","query":"Recommend a golden Belgian tripel with spicy yeast and a warming finish.","relevant_styles":["Tripel"]},
+  {"id":"belgian-quad","query":"Suggest a rich quadrupel with raisin, plum, and caramel notes.","relevant_styles":["Quadrupel (Quad)"]},
+  {"id":"strong-bock","query":"I want a strong, malty bock with a smooth warming finish.","relevant_styles":["Bock","Doppelbock","Maibock / Helles Bock"]},
+  {"id":"barleywine-sipper","query":"Recommend a high-strength barleywine to sip slowly, with rich malt sweetness.","relevant_styles":["American Barleywine","English Barleywine"]},
+  {"id":"scotch-ale-malt","query":"Find a full-bodied Scotch ale with caramel malt and a warming character.","relevant_styles":["Scotch Ale / Wee Heavy"]},
+  {"id":"english-bitter-session","query":"I would like a balanced, sessionable English bitter with modest alcohol.","relevant_styles":["English Bitter","Extra Special / Strong Bitter (ESB)"]},
+  {"id":"blonde-easy","query":"Recommend an easy-drinking blonde ale with a soft malt profile.","relevant_styles":["American Blonde Ale","Belgian Pale Ale"]},
+  {"id":"cream-ale-clean","query":"Suggest a smooth, clean cream ale that is light and refreshing.","relevant_styles":["Cream Ale"]},
+  {"id":"kolsch-crisp","query":"Find a crisp, delicate Kölsch with a subtle fruity note.","relevant_styles":["Kölsch"]},
+  {"id":"dunkelweizen-dark-wheat","query":"I want a dark wheat beer with bread crust, banana, and clove notes.","relevant_styles":["Dunkelweizen"]},
+  {"id":"schwarzbier-roasty","query":"Recommend a dark lager with gentle roast and a clean lager finish.","relevant_styles":["Schwarzbier"]},
+  {"id":"irish-red","query":"Suggest an Irish red ale with toasted malt and a balanced finish.","relevant_styles":["Irish Red Ale"]},
+  {"id":"belgian-dark-ale","query":"I am looking for a Belgian dark ale with fruity yeast character.","relevant_styles":["Belgian Dark Ale"]},
+  {"id":"belgian-ipa","query":"Recommend a Belgian IPA that combines hop bitterness and Belgian yeast fruitiness.","relevant_styles":["Belgian IPA"]},
+  {"id":"black-ale","query":"Find a dark, hoppy black ale with roasted malt and citrus hops.","relevant_styles":["American Black Ale"]},
+  {"id":"sweet-milk-stout","query":"I want a sweet, creamy stout with milk chocolate notes.","relevant_styles":["Milk / Sweet Stout"]},
+  {"id":"oatmeal-stout","query":"Recommend a smooth oatmeal stout with a creamy body and roasted flavor.","relevant_styles":["Oatmeal Stout"]},
+  {"id":"irish-dry-stout","query":"Suggest a dry Irish stout with roasted barley and a moderate body.","relevant_styles":["Irish Dry Stout"]},
+  {"id":"imperial-stout-high-abv","query":"Find a high-ABV imperial stout with intense roast and dark chocolate.","relevant_styles":["American Double / Imperial Stout","Russian Imperial Stout"]},
+  {"id":"fruit-beer","query":"Recommend a fruit beer with a clear berry or stone-fruit character.","relevant_styles":["Fruit / Vegetable Beer","Lambic - Fruit"]},
+  {"id":"pumpkin-spice","query":"I would like a seasonal pumpkin ale with warming baking spices.","relevant_styles":["Pumpkin Ale"]},
+  {"id":"rye-spicy","query":"Find a rye beer with spicy grain character and a firm hop finish.","relevant_styles":["Rye Beer"]},
+  {"id":"winter-warmer","query":"Suggest a winter warmer with rich malt, spice, and a warming finish.","relevant_styles":["Winter Warmer"]},
+  {"id":"wild-funky-sour","query":"I want a funky wild ale with tartness and complex fermentation character.","relevant_styles":["American Wild Ale"]},
+  {"id":"lambic-fruit","query":"Recommend a fruit lambic with bright acidity and fresh fruit character.","relevant_styles":["Lambic - Fruit"]},
+  {"id":"berliner-weiss","query":"Find a tart, refreshing Berliner Weisse with a light body.","relevant_styles":["Berliner Weissbier"]},
+  {"id":"vienna-malt","query":"Recommend a Vienna lager with toasty malt and a crisp finish.","relevant_styles":["Vienna Lager"]},
+  {"id":"marzen-oktoberfest","query":"Suggest a smooth Oktoberfest beer with toasted bread and balanced malt.","relevant_styles":["Märzen / Oktoberfest"]},
+  {"id":"american-strong-ale","query":"Find a strong American ale with bold malt and a warming finish.","relevant_styles":["American Strong Ale"]},
+  {"id":"english-pale-ale","query":"I want an English pale ale with earthy hops and balanced malt.","relevant_styles":["English Pale Ale"]},
+  {"id":"european-pale-lager","query":"Recommend a clean European pale lager with a crisp, refreshing finish.","relevant_styles":["Euro Pale Lager"]},
+  {"id":"amber-red-lager","query":"Find an amber lager with toasted malt and a smooth, clean finish.","relevant_styles":["American Amber / Red Lager"]},
+  {"id":"dortmunder-export","query":"Suggest a Dortmunder export lager that is crisp, malty, and slightly bitter.","relevant_styles":["Dortmunder / Export Lager"]}
 ]
