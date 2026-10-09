@@ -54,6 +54,20 @@ def score_case(case: dict, results: list[dict], target_count: int, k: int) -> di
     }
 
 
+def aggregate_metrics(scored_cases: list[dict]) -> dict:
+    metric_names = [
+        "precision_at_k",
+        "recall_at_k",
+        "hit_rate_at_k",
+        "reciprocal_rank",
+        "ndcg_at_k",
+    ]
+    return {
+        name: sum(item[name] for item in scored_cases) / len(scored_cases)
+        for name in metric_names
+    }
+
+
 def evaluate(cases_path: Path = CASES_PATH, output_path: Path = OUTPUT_PATH, k: int = 5) -> dict:
     cases = json.loads(cases_path.read_text(encoding="utf-8"))
     if not isinstance(cases, list) or not cases:
@@ -71,28 +85,59 @@ def evaluate(cases_path: Path = CASES_PATH, output_path: Path = OUTPUT_PATH, k: 
         raise ValueError("A coleção está vazia. Execute a ingestão antes da avaliação.")
     catalog = collection.get(include=["metadatas"])["metadatas"]
 
-    scored = []
+    baseline_scored = []
+    reranked_scored = []
     for case in cases:
         result = collection.query(
             query_texts=[case["query"]],
             n_results=min(max(k, settings.retrieval_candidates), collection.count()),
             include=["documents", "metadatas", "distances"],
         )
+        vector_results = result["metadatas"][0]
+        relevant_catalog_count = sum(is_relevant(item, case) for item in catalog)
+        baseline_scored.append(
+            score_case(case, vector_results[:k], relevant_catalog_count, k)
+        )
+
         ranked = rerank_candidates(
             result["documents"][0], result["metadatas"][0], result["distances"][0], k
         )
         metadata = [item["metadata"] for item in ranked]
-        relevant_catalog_count = sum(is_relevant(item, case) for item in catalog)
-        scored.append(score_case(case, metadata, relevant_catalog_count, k))
-    metric_names = ["precision_at_k", "recall_at_k", "hit_rate_at_k", "reciprocal_rank", "ndcg_at_k"]
+        reranked_scored.append(
+            score_case(case, metadata, relevant_catalog_count, k)
+        )
+
+    baseline_metrics = aggregate_metrics(baseline_scored)
+    reranked_metrics = aggregate_metrics(reranked_scored)
+    metric_deltas = {
+        name: reranked_metrics[name] - value
+        for name, value in baseline_metrics.items()
+    }
     report = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "collection": collection.name,
         "collection_size": collection.count(),
         "k": k,
-        "cases_count": len(scored),
-        "metrics": {name: sum(item[name] for item in scored) / len(scored) for name in metric_names},
-        "cases": scored,
+        "cases_count": len(reranked_scored),
+        "metrics": reranked_metrics,
+        "baseline": {
+            "name": "vector_similarity",
+            "metrics": baseline_metrics,
+        },
+        "reranked": {
+            "name": "vector_similarity_plus_business_signals",
+            "metrics": reranked_metrics,
+        },
+        "reranking_delta": metric_deltas,
+        "cases": [
+            {
+                "id": reranked["id"],
+                "query": reranked["query"],
+                "baseline": baseline,
+                "reranked": reranked,
+            }
+            for baseline, reranked in zip(baseline_scored, reranked_scored)
+        ],
         "note": "Rótulos por estilo medem correspondência de categoria (proxy); prefira cervejas relevantes revisadas por humanos para avaliar relevância semântica.",
     }
     output_path.parent.mkdir(parents=True, exist_ok=True)
